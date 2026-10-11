@@ -1,216 +1,198 @@
-
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Danyal Mohammad — Computer Science, University of Maryland</title>
+<meta name="description" content="Computer science student at the University of Maryland building full-stack apps and machine learning projects.">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
+:root{--bg:#0e1116;--fg:#c9d1d9;--dim:#707b88;--acc:#5fd3a2;--line:#222a33;--mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#fff;color:#111;font-family:'Geist',sans-serif;font-weight:300;font-size:15px;line-height:1.65;max-width:780px;margin:0 auto;padding:0 2rem}
-
-header{padding:5rem 0 4rem;border-bottom:1px solid #e0e0e0}
-.name{font-family:'Instrument Serif',serif;font-size:clamp(48px,9vw,80px);font-weight:400;line-height:1;letter-spacing:-0.02em;margin-bottom:1.5rem}
-.name span{font-style:italic;color:#999}
-.bio{font-size:16px;color:#555;max-width:480px;line-height:1.7;margin-bottom:2rem}
-.links{display:flex;gap:1.5rem;flex-wrap:wrap}
-.links a{font-size:13px;color:#999;text-decoration:none;letter-spacing:0.04em;transition:color 0.15s}
-.links a:hover{color:#111}
-
-section{padding:3.5rem 0;border-bottom:1px solid #e0e0e0}
-.label{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:#bbb;margin-bottom:2.5rem}
-
-.skills-row{display:flex;flex-direction:column;gap:1.25rem}
-.skill-line{display:flex;gap:0}
-.skill-line-title{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#bbb;width:140px;flex-shrink:0;padding-top:1px}
-.skill-line-items{font-size:14px;color:#444;line-height:1.7}
-
-.project{padding:2rem 0;border-bottom:1px solid #f0f0f0}
-.project:last-child{border-bottom:none}
-.project:first-child{padding-top:0}
-.project-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.4rem}
-.project-name{font-family:'Instrument Serif',serif;font-size:24px;font-weight:400;line-height:1}
-.project-stack{font-size:12px;color:#bbb;letter-spacing:0.04em}
-.project-desc{font-size:14px;color:#666;line-height:1.65;max-width:560px;margin-top:0.5rem}
-.project-link{font-size:12px;color:#bbb;text-decoration:none;margin-top:0.75rem;display:inline-block;transition:color 0.15s}
-.project-link:hover{color:#111}
-
-.exp-item{padding:2rem 0;border-bottom:1px solid #f0f0f0;display:grid;grid-template-columns:140px 1fr;gap:1.5rem}
-.exp-item:last-child{border-bottom:none}
-.exp-item:first-child{padding-top:0}
-.exp-date{font-size:12px;color:#bbb;padding-top:3px}
-.exp-role{font-family:'Instrument Serif',serif;font-size:20px;font-weight:400;line-height:1.1;margin-bottom:0.25rem}
-.exp-org{font-size:13px;color:#999;margin-bottom:1rem}
-.exp-bullets{list-style:none}
-.exp-bullets li{font-size:14px;color:#555;line-height:1.6;padding-left:1.25rem;position:relative;margin-bottom:0.35rem}
-.exp-bullets li::before{content:'·';position:absolute;left:0;color:#ccc}
-
-.edu-row{display:grid;grid-template-columns:140px 1fr;gap:1.5rem;padding-top:0}
-.edu-year{font-size:12px;color:#bbb;padding-top:3px}
-.edu-degree{font-family:'Instrument Serif',serif;font-size:20px;font-weight:400;margin-bottom:0.25rem}
-.edu-school{font-size:13px;color:#999;margin-bottom:0.5rem}
-.edu-minor{font-size:13px;color:#aaa}
-
-footer{padding:3rem 0;display:flex;justify-content:space-between;align-items:center}
-.footer-copy{font-size:12px;color:#ccc}
-.footer-right{font-size:12px;color:#ccc}
+body{background:var(--bg);color:var(--fg);font-family:var(--mono);font-size:14px;line-height:1.7}
+a{color:var(--acc);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.page{max-width:820px;margin:0 auto;padding:4rem 1.5rem 5rem}
+.prompt{color:var(--dim)}
+.prompt b{color:var(--acc);font-weight:500}
+.cur{display:inline-block;width:.6em;height:1.1em;background:var(--acc);vertical-align:text-bottom;margin-left:2px;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+h1{font-size:clamp(2rem,6vw,3rem);font-weight:700;line-height:1.1;margin:1.25rem 0 .75rem;color:#fff;letter-spacing:-.02em}
+.lede{color:var(--fg);max-width:60ch;margin-bottom:1.25rem}
+.contact{display:flex;gap:.4rem 1.5rem;flex-wrap:wrap}
+section{margin-top:3.5rem}
+h2{font-size:14px;font-weight:500;color:var(--dim);margin-bottom:1.25rem;padding-bottom:.5rem;border-bottom:1px solid var(--line)}
+h2 b{color:var(--acc);font-weight:500}
+.item{margin-bottom:1.75rem}
+.row{display:flex;justify-content:space-between;gap:.25rem 1rem;flex-wrap:wrap;align-items:baseline}
+h3{font-size:14px;font-weight:700;color:#fff}
+.meta{color:var(--dim);font-size:13px}
+.sub{color:var(--dim);font-size:13px;margin-bottom:.35rem}
+ul{list-style:none;max-width:78ch}
+li{position:relative;padding-left:1.4ch;margin-bottom:.3rem}
+li::before{content:"-";position:absolute;left:0;color:var(--dim)}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:.5rem 2rem}
+dt{color:var(--acc)}
+footer{margin-top:4rem;color:var(--dim);font-size:13px}
+@media(max-width:600px){dl{display:block}dd{margin-bottom:.75rem}}
+@media(prefers-reduced-motion:reduce){.cur{animation:none}}
 </style>
+</head>
+<body>
+<div class="page">
 
 <header>
-  <div class="name">Danyal<br><span>Mohammad</span></div>
-  <p class="bio">Hi, I am a Computer Science major at the University of Maryland with minors in Data Science and Human Development. 
-    I like exploring how technology, people, and design connect, especially through hands-on projects and new ideas. 
-    Outside of class, I’m always curious about learning new skills and finding ways to turn ideas into something real.
-  </p>
-  <div class="links">
+  <p class="prompt"><b>danyal@umd</b>:~$ whoami</p>
+  <h1>Danyal Mohammad</h1>
+  <p class="lede">Computer Science at the University of Maryland, class of 2027.</p>
+  <div class="contact">
     <a href="mailto:danyalmohammad47@gmail.com">danyalmohammad47@gmail.com</a>
-    <a href="https://www.linkedin.com/in/mdanyal4">linkedin.com/in/mdanyal4</a>
-    <a href="https://github.com/mdanyal4">github.com/mdanyal4</a>
-    <a href="#">301-450-9407</a>
+    <a href="https://github.com/mdanyal4">github</a>
+    <a href="https://www.linkedin.com/in/mdanyal4">linkedin</a>
   </div>
 </header>
 
 <section>
-  <div class="label">Skills</div>
-  <div class="skills-row">
-    <div class="skill-line">
-      <div class="skill-line-title">Languages</div>
-      <div class="skill-line-items">Java, Python, C/C++, SQL, JavaScript, HTML/CSS, x86-64 Assembly, OCaml, R</div>
-    </div>
-    <div class="skill-line">
-      <div class="skill-line-title">Tools</div>
-      <div class="skill-line-items">Git, GitHub, Firebase, React, Node.js, Vercel, VS Code, Eclipse, JUnit, CREO Parametric</div>
-    </div>
-    <div class="skill-line">
-      <div class="skill-line-title">Concepts</div>
-      <div class="skill-line-items">CI/CD, POSIX/Unix, Firestore, Data Structures & Algorithms, Applied ML, Google Workspace</div>
-    </div>
+  <h2><b>$</b> ls ~/projects</h2>
+
+  <div class="item">
+    <div class="row"><h3>Looped</h3><span class="meta">Python, scikit-learn, FastAPI, D3.js</span></div>
+    <p class="sub">Gmail-powered job application tracker</p>
+    <ul>
+      <li>Built a searchable job application dashboard, by connecting Gmail through OAuth 2.0 and processing email updates with a FastAPI backend.</li>
+      <li>Replaced paid LLM calls, by training two TF-IDF and logistic regression pipelines to spot job emails and classify application status.</li>
+      <li>Turned email updates into application records, by extracting company, position, location, and reference number and charting stages with D3.js.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="row"><h3>Terraprep</h3><span class="meta">React, Firebase, Vercel</span></div>
+    <p class="sub">Study partner matching for UMD students</p>
+    <ul>
+      <li>Connected UMD students with study partners in a live app, by matching on course and adding real-time messaging.</li>
+      <li>Secured accounts and stored sessions and messages, by using Firebase Authentication and Firestore.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="row"><h3>FeedTheTurtle</h3><span class="meta">Python</span></div>
+    <p class="sub">Free food events at UMD</p>
+    <ul>
+      <li>Surfaced free food events on campus, by importing TerpLink's iCal feed into a web app.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="row"><h3>PlanetTerp Review Rating Prediction</h3><span class="meta">Python, pandas, Transformers</span></div>
+    <ul>
+      <li>Built a dataset of 1,000+ reviews across 8 professors, by pulling PlanetTerp API data and removing incomplete and duplicate records.</li>
+      <li>Predicted student ratings within 0.67 stars mean absolute error, by applying a pretrained BERT sentiment model.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="row"><h3>Census Income Classification</h3><span class="meta">Python, scikit-learn</span></div>
+    <ul>
+      <li>Reached 85.33% test accuracy predicting income above $50,000, by training a Random Forest that beat decision tree and KNN models on an 80/20 split.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="row"><h3>Unix Shell</h3><span class="meta">C, POSIX</span></div>
+    <ul>
+      <li>Ran foreground and background jobs, by managing processes with fork(), execvp(), and waitpid().</li>
+      <li>Connected commands to files, by implementing input/output redirection with dup2().</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="row"><h3>Memory Allocator</h3><span class="meta">C</span></div>
+    <ul>
+      <li>Limited heap fragmentation, by building an allocator with doubly linked free and used lists, block splitting and merging, and OS-level memory mapping.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="row"><h3>GPS Navigation</h3><span class="meta">Java</span></div>
+    <ul>
+      <li>Found shortest routes between towns, by running Dijkstra's algorithm on an adjacency-list graph and verifying it with JUnit tests.</li>
+    </ul>
   </div>
 </section>
 
 <section>
-  <div class="label">Projects</div>
+  <h2><b>$</b> cat ~/experience.log</h2>
 
-  <div class="project">
-    <div class="project-top">
-      <div class="project-name">Terraprep</div>
-      <div class="project-stack">React · JavaScript · Firebase · Vercel</div>
-    </div>
-    <div class="project-desc">Live full-stack platform for UMD students to find study partners by course. Built scalable Firebase architecture with real-time Firestore listeners, authentication, and CI/CD on Vercel.</div>
-    <a class="project-link" href="https://github.com/mdanyal4" target="_blank">github.com/mdanyal4 ↗</a>
+  <div class="item">
+    <div class="row"><h3>Student Developer</h3><span class="meta">Aug 2026 – present</span></div>
+    <p class="sub">Maryland Institute for Technology in the Humanities, University of Maryland</p>
+    <ul>
+      <li>Supported XML editing for digital humanities researchers using Scholarly XML, a VS Code extension with 19,000+ users, by developing features in TypeScript.</li>
+    </ul>
   </div>
 
-  <div class="project">
-    <div class="project-top">
-      <div class="project-name">Unix Shell</div>
-      <div class="project-stack">C · POSIX</div>
-    </div>
-    <div class="project-desc">Shell with process creation via fork/execvp/waitpid, I/O redirection through dup2, and a full job control system with dynamic memory management.</div>
-    <a class="project-link" href="https://github.com/mdanyal4" target="_blank">github.com/mdanyal4 ↗</a>
+  <div class="item">
+    <div class="row"><h3>Community Assistant</h3><span class="meta">Aug 2025 – present</span></div>
+    <p class="sub">Resident Life, University of Maryland</p>
+    <ul>
+      <li>Kept a residence hall running 24/7 on a rotating team of 15, by answering resident inquiries and responding to incidents with supervisors.</li>
+    </ul>
   </div>
 
-  <div class="project">
-    <div class="project-top">
-      <div class="project-name">Memory Allocator</div>
-      <div class="project-stack">C · Systems</div>
-    </div>
-    <div class="project-desc">Custom heap allocator with doubly linked free/used lists, block splitting and merging, and OS-level memory mapping to minimize fragmentation.</div>
-    <a class="project-link" href="https://github.com/mdanyal4" target="_blank">github.com/mdanyal4 ↗</a>
+  <div class="item">
+    <div class="row"><h3>Audit Specialist</h3><span class="meta">May 2026 – Aug 2026</span></div>
+    <p class="sub">Conferences &amp; Visitor Services, University of Maryland</p>
+    <ul>
+      <li>Kept records accurate for 200+ summer programs and 20,000+ guests, by auditing StarRez check-in/out data daily and reconciling key and access-card logs against it.</li>
+    </ul>
   </div>
 
-  <div class="project">
-    <div class="project-top">
-      <div class="project-name">Battery Display</div>
-      <div class="project-stack">x86-64 Assembly · Embedded</div>
-    </div>
-    <div class="project-desc">Low-level firmware reading hardware I/O ports to compute and display battery state via bitwise operations and segment encoding — no high-level abstractions.</div>
-    <a class="project-link" href="https://github.com/mdanyal4" target="_blank">github.com/mdanyal4 ↗</a>
+  <div class="item">
+    <div class="row"><h3>Data Science Track Lead</h3><span class="meta">Feb 2026 – Apr 2026</span></div>
+    <p class="sub">Data Science Club, University of Maryland</p>
+    <ul>
+      <li>Taught data cleaning, analysis, and visualization, by co-leading workshops on real datasets and writing Python exercises in Google Colab.</li>
+    </ul>
   </div>
 
-  <div class="project">
-    <div class="project-top">
-      <div class="project-name">GPS Navigation</div>
-      <div class="project-stack">Java · Algorithms</div>
-    </div>
-    <div class="project-desc">Adjacency-list graph of towns and roads with Dijkstra's algorithm for optimal routing. Full JUnit test coverage for graph operations and path accuracy.</div>
-    <a class="project-link" href="https://github.com/mdanyal4" target="_blank">github.com/mdanyal4 ↗</a>
-  </div>
-</section>
-
-<section>
-  <div class="label">Experience</div>
-
-  <div class="exp-item">
-    <div class="exp-date">May 2026 – Present</div>
-    <div>
-      <div class="exp-role">Audit Specialist</div>
-      <div class="exp-org">Conferences & Visitor Services · University of Maryland</div>
-      <ul class="exp-bullets">
-        <li>Audit daily guest check-in/out records across 200+ programs serving 20,000+ total guests</li>
-        <li>Produce comprehensive audit reports per conference, ensuring data accuracy and accountability</li>
-        <li>Manage hospitality desk — check-ins, key inventory, incident reports, and guest communication</li>
-      </ul>
-    </div>
+  <div class="item">
+    <div class="row"><h3>Hospitality Assistant</h3><span class="meta">May 2025 – Aug 2025</span></div>
+    <p class="sub">Conferences &amp; Visitor Services, University of Maryland</p>
+    <ul>
+      <li>Checked in 500+ participants per program across 200+ programs, by running front desk operations on a team of 20–25.</li>
+      <li>Kept inventory accurate, by auditing keys, access cards, and packages daily.</li>
+    </ul>
   </div>
 
-  <div class="exp-item">
-    <div class="exp-date">Feb. 2026 – Apr. 2026</div>
-    <div>
-      <div class="exp-role">Data Science Track Lead</div>
-      <div class="exp-org">Busily · University of Maryland</div>
-      <ul class="exp-bullets">
-        <li>Lead workshops on data cleaning, analysis, and visualization using real-world datasets</li>
-        <li>Design Python exercises in Google Colab to reinforce applied data science skills</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="exp-item">
-    <div class="exp-date">Aug. 2025 – May 2026</div>
-    <div>
-      <div class="exp-role">Community Assistant</div>
-      <div class="exp-org">Resident Life · University of Maryland</div>
-      <ul class="exp-bullets">
-        <li>Support 24/7 residence hall operations in a rotating shift team of 15 staff</li>
-        <li>Handle resident inquiries, incident response, and coordination with supervisors</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="exp-item">
-    <div class="exp-date">May – Aug. 2025</div>
-    <div>
-      <div class="exp-role">Hospitality Assistant</div>
-      <div class="exp-org">Conferences & Visitor Services · University of Maryland</div>
-      <ul class="exp-bullets">
-        <li>Ran front desk operations across multiple halls in a team of 20–25 for 200+ programs</li>
-        <li>Coordinated check-in/out for 500+ participants per program — 20,000+ guests total</li>
-        <li>Maintained key, access card, and package inventory with daily audits and logs</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="exp-item">
-    <div class="exp-date">Aug. 2023 – Dec. 2024</div>
-    <div>
-      <div class="exp-role">Student Assistant</div>
-      <div class="exp-org">Dean's Office · Montgomery College</div>
-      <ul class="exp-bullets">
-        <li>Front desk support for students, faculty, and visitors with scheduling and inquiries</li>
-        <li>Managed supplies, mail, recordkeeping, and event coordination for office programs</li>
-      </ul>
-    </div>
+  <div class="item">
+    <div class="row"><h3>Student Assistant</h3><span class="meta">Aug 2023 – Dec 2024</span></div>
+    <p class="sub">Dean's Office, Montgomery College</p>
+    <ul>
+      <li>Helped students, faculty, and visitors, by running the front desk and handling scheduling and inquiries.</li>
+      <li>Kept office programs on track, by managing supplies, mail, records, and event coordination.</li>
+    </ul>
   </div>
 </section>
 
 <section>
-  <div class="label">Education</div>
-  <div class="edu-row">
-    <div class="edu-year">Expected May 2027</div>
-    <div>
-      <div class="edu-degree">B.S. Computer Science</div>
-      <div class="edu-school">University of Maryland, College Park</div>
-      <div class="edu-minor">Minor in Data Science & Human Development</div>
-    </div>
-  </div>
+  <h2><b>$</b> cat ~/skills.txt</h2>
+  <dl>
+    <dt>languages</dt><dd>Python, Java, C, JavaScript, TypeScript, SQL, OCaml, R, x86-64 Assembly, HTML/CSS</dd>
+    <dt>frameworks</dt><dd>React, FastAPI, Node.js, scikit-learn, pandas, NumPy, Transformers, D3.js, Firebase</dd>
+    <dt>tools</dt><dd>Git, GitHub, Linux/Unix, Docker, Vercel, JUnit, REST APIs, OAuth 2.0</dd>
+  </dl>
 </section>
 
-<footer>
-  <div class="footer-copy">Danyal Mohammad · 2026</div>
-  <div class="footer-right">College Park, MD</div>
-</footer>
+<section>
+  <h2><b>$</b> cat ~/education.md</h2>
+  <div class="row"><h3>B.S. Computer Science, University of Maryland</h3><span class="meta">expected May 2027</span></div>
+  <p class="sub">Minors in Data Science and Human Development</p>
+  <p>Coursework: Data Structures, Algorithms, Computer Systems, Organization of Programming Languages, Discrete Structures, Linear Algebra, Probability and Statistics, Data Visualization. In progress: Advanced Data Structures, Machine Learning, Natural Language Processing.</p>
+</section>
+
+<footer><span class="prompt"><b>danyal@umd</b>:~$</span><span class="cur" aria-hidden="true"></span></footer>
+
+</div>
+</body>
+</html>
