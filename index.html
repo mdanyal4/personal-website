@@ -1,61 +1,148 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Danyal Mohammad — preview</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,500;6..72,700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
-    :root { --paper:#f4eddf; --ink:#1c251f; --pine:#1d4938; --pine-dark:#123529; --orange:#d95c3a; --gold:#e4b95b; --line:#c9bba5; --brown:#60402c; }
-    * { box-sizing:border-box; } html { scroll-behavior:smooth; } body { margin:0; color:var(--ink); background:var(--paper); font-family:'Plus Jakarta Sans',sans-serif; }
-    body:before { content:''; pointer-events:none; position:fixed; inset:0; opacity:.025; background-image:radial-gradient(#1c251f 0.6px,transparent .6px); background-size:7px 7px; }
-    .wrap { width:min(1160px,calc(100% - 40px)); margin:auto; } .mono { font:11px 'DM Mono',monospace; letter-spacing:.08em; text-transform:uppercase; }
-    nav { height:75px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid rgba(28,37,31,.18); position:relative; } nav a { color:inherit; text-decoration:none; } .name { font:700 28px/1 Newsreader,serif; letter-spacing:-.055em; } .navlinks { display:flex; gap:24px; font-size:12px; }
-    .hero { min-height:520px; display:grid; grid-template-columns:1fr .85fr; gap:70px; align-items:center; border-bottom:1px solid var(--line); position:relative; } .kicker { color:var(--orange); margin-bottom:18px; } h1,h2,h3 { margin:0; font-family:Newsreader,serif; letter-spacing:-.065em; } h1 { max-width:650px; font-size:clamp(56px,8vw,100px); line-height:.84; } h1 em { color:var(--pine); font-style:italic; } .hero p { max-width:510px; margin:28px 0 0; font-size:15px; line-height:1.75; } .links { display:flex; gap:18px; margin-top:27px; font:12px 'DM Mono',monospace; } .links a { color:inherit; text-underline-offset:4px; }
-    .stack { position:relative; height:320px; } .card { position:absolute; width:232px; padding:20px; background:#fff8e8; box-shadow:4px 5px 0 rgba(28,37,31,.15); } .card:before { content:''; position:absolute; top:-8px; left:45px; width:66px; height:17px; background:rgba(228,185,91,.65); transform:rotate(-3deg); } .card.one { right:13px; top:10px; transform:rotate(4deg); } .card.two { left:0; top:135px; width:215px; background:#e4eddf; transform:rotate(-5deg); } .card .mono { color:var(--orange); font-size:9px; } .card p { margin:12px 0 0; font:600 23px/1.04 Newsreader,serif; letter-spacing:-.04em; }
-    section { padding:92px 0; position:relative; } .section-top { display:flex; align-items:end; justify-content:space-between; gap:24px; margin-bottom:40px; } h2 { font-size:clamp(43px,5vw,65px); line-height:.88; } .section-top p { max-width:315px; margin:0; color:#526057; font-size:13px; line-height:1.6; }
-    .shelf { display:flex; align-items:end; gap:8px; min-height:340px; padding:0 26px; background:linear-gradient(90deg,#4c3021,#6a4531 9%,#482c1e 52%,#6a4531 91%,#4c3021); border:10px solid #4a2d20; border-bottom-width:22px; box-shadow:inset 0 16px 30px rgba(0,0,0,.24), 0 8px 0 #2e1b13; } .book { width:clamp(48px,7.2vw,82px); border:0; padding:13px 8px; min-height:200px; display:grid; place-items:center; writing-mode:vertical-rl; transform:rotate(180deg); color:#1b211d; font:500 11px 'DM Mono',monospace; letter-spacing:.06em; box-shadow:3px 1px 0 rgba(0,0,0,.32); cursor:pointer; transition:.2s; } .book:hover { transform:translateY(-18px) rotate(180deg); } .book:nth-child(1){height:271px;background:var(--gold)} .book:nth-child(2){height:238px;background:var(--orange);color:#fff7eb} .book:nth-child(3){height:300px;background:#d8e0d2}.book:nth-child(4){height:254px;background:#5e8393;color:#fff7eb}.book:nth-child(5){height:290px;background:#d7a072}.book:nth-child(6){height:223px;background:#bfcdbb}.book:nth-child(7){height:279px;background:#82726a;color:#fff7eb}.book:nth-child(8){height:246px;background:#d7c2a7}.book:nth-child(9){height:264px;background:#a9c7bd}
-    .experience { color:#f8f1e3; background:var(--pine); } .experience .section-top p { color:#d3ddd2; } .experience .mono { color:var(--gold); } .vinyl-layout{display:grid;grid-template-columns:.76fr 1.24fr;gap:55px;align-items:start}.turntable{position:sticky;top:22px;min-height:450px;padding:24px;background:#d8c09b;border:12px solid #a37955;box-shadow:12px 13px 0 rgba(8,25,18,.24),inset 0 0 0 2px rgba(45,29,18,.22)}.platter{position:absolute;top:48px;left:50%;width:246px;height:246px;transform:translateX(-50%);border-radius:50%;background:repeating-radial-gradient(circle,#161b19 0 2px,#202725 3px 7px);box-shadow:0 8px 13px rgba(0,0,0,.38)}.platter:after{content:'';position:absolute;inset:84px;margin:auto;width:46px;height:46px;border:10px solid #f2d8b1;border-radius:50%;background:var(--playing-color,#d95c3a);box-shadow:0 0 0 3px #ba422b}.tonearm{position:absolute;z-index:2;right:46px;top:36px;width:14px;height:230px;background:#d8d5c9;border:2px solid #877e70;transform:rotate(26deg);transform-origin:top;border-radius:10px;transition:transform .4s}.tonearm:after{content:'';position:absolute;bottom:-6px;left:-9px;width:30px;height:20px;background:#c7c4b8;border:2px solid #877e70}.turntable.playing .platter{animation:spin 2.35s linear infinite}.turntable.playing .tonearm{transform:rotate(18deg)}.now{position:absolute;z-index:3;left:22px;right:22px;bottom:22px;padding:15px 18px 16px;background:rgba(248,241,227,.94);color:#2f342d;border:1px solid rgba(75,56,31,.25);box-shadow:0 4px 0 rgba(75,56,31,.15)}.now small{font:10px 'DM Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#9b442e}.now strong{display:block;margin:5px 0 4px;font:600 24px/1 Newsreader,serif;letter-spacing:-.04em}.now p{margin:0;font:11px/1.55 'DM Mono',monospace}.records { display:grid; grid-template-columns:repeat(2,1fr); gap:17px; border-top:1px solid rgba(248,241,227,.55); padding-top:25px; } .record { width:100%; border:0; text-align:left; cursor:pointer; min-height:158px; padding:20px 16px 18px 108px; color:#18382d; background:#f0e3cb; position:relative; box-shadow:5px 6px 0 rgba(8,25,18,.22); transition:transform .2s; } .record:hover,.record.active { transform:translateY(-4px); outline:3px solid var(--gold); outline-offset:3px; } .record:before { content:''; position:absolute; left:17px; top:27px; width:72px; height:72px; border-radius:50%; background:radial-gradient(circle at center,var(--label) 0 9px,#f3dec0 10px 16px,transparent 17px),repeating-radial-gradient(circle,#1b201e 0 2px,#2a302d 3px 7px); } .record.active:before{animation:recordspin 2.35s linear infinite}.record:after{display:none}.record small { display:block; color:#9b442e; font:10px 'DM Mono',monospace; letter-spacing:.05em; text-transform:uppercase; } .record h3 { margin:11px 0 8px; font-size:25px; line-height:.94; } .record p { margin:0; font-size:11px; line-height:1.45; } .record:nth-child(1){--label:#e85c37}.record:nth-child(2){--label:#e2ba54}.record:nth-child(3){--label:#67909d}.record:nth-child(4){--label:#738e71}.record:nth-child(5){--label:#c77b5b}.record:nth-child(6){--label:#a78ac4}@keyframes spin{to{transform:translateX(-50%) rotate(360deg)}}@keyframes recordspin{to{transform:rotate(360deg)}}
-    .about { display:grid; grid-template-columns:1.1fr .9fr; gap:100px; } .about p { max-width:580px; margin:24px 0 0; font-size:15px; line-height:1.75; } .facts { border-top:1px solid var(--line); } .fact { display:flex; justify-content:space-between; gap:14px; padding:15px 0; border-bottom:1px solid var(--line); font-size:13px; } .fact span:last-child { font:11px 'DM Mono',monospace; text-align:right; color:#59645b; }
-    footer { padding:58px 0; background:var(--orange); color:#fff8ee; } footer .wrap { display:flex; justify-content:space-between; align-items:end; gap:30px; } footer h2 { max-width:500px; } footer a { color:inherit; font:12px 'DM Mono',monospace; text-underline-offset:4px; }
-    dialog{width:min(880px,calc(100% - 28px));max-width:none;padding:0;border:0;background:transparent;box-shadow:0 20px 55px rgba(0,0,0,.38)}dialog::backdrop{background:rgba(14,30,24,.74);backdrop-filter:blur(5px)}.open-book{position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:490px;background:#fff8e8;color:#17211d}.open-book:after{content:'';position:absolute;top:0;bottom:0;left:calc(50% - 7px);width:14px;background:linear-gradient(90deg,rgba(65,48,32,.18),transparent 52%,rgba(65,48,32,.12));pointer-events:none}.page{padding:48px;color:#17211d}.page.left{background:#fff8e8;border-right:1px solid #c8b894}.page.right{display:flex;flex-direction:column;justify-content:space-between;background:#f3e5cb}.book-close{position:absolute;z-index:2;top:18px;right:20px;width:42px;height:42px;border:0;border-radius:50%;background:var(--pine);color:white;font:30px/36px Arial;cursor:pointer}.project-kicker{color:#bf4528}.page h3{margin:22px 0 20px;font:700 clamp(42px,5vw,63px)/.86 Newsreader,serif;letter-spacing:-.07em}.page p{font-size:14px;line-height:1.72}.tech{margin-top:28px;padding-top:16px;border-top:1px solid #c8b894;font:11px/1.6 'DM Mono',monospace}.note{font:12px/1.6 'DM Mono',monospace;color:#506454;max-width:240px}.project-link{display:flex;justify-content:space-between;text-decoration:none;padding:15px 0;border-bottom:1px solid #a99675;font:600 20px/1 Newsreader,serif;color:#173c2e}.project-link:hover{color:#bf4528}@media(max-width:760px){dialog{width:calc(100% - 20px)}.open-book{grid-template-columns:1fr}.open-book:after{display:none}.page{padding:38px 28px}.page.left{border-right:0;border-bottom:1px solid #c8b894}}
-    @media(max-width:760px){.wrap{width:min(100% - 30px,1160px)}.navlinks{display:none}.hero,.about,.vinyl-layout{grid-template-columns:1fr;gap:35px}.hero{padding:65px 0;min-height:0}.stack{height:250px}.section-top{align-items:start;flex-direction:column}.shelf{min-height:280px;padding:0 12px;gap:4px}.book{font-size:9px;min-width:0;width:15%;padding:7px 3px}.book:nth-child(n+7){display:none}.turntable{position:relative;top:auto;min-height:400px}.records{grid-template-columns:1fr}.about{gap:45px}footer .wrap{display:block}footer h2{margin-bottom:28px}}
-  </style>
-</head>
-<body>
-  <header class="wrap"><nav><a class="name" href="#top">Danyal Mohammad</a><div class="navlinks"><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#about">About</a></div><span class="mono">Portfolio / 2026</span></nav></header>
-  <main id="top">
-    <div class="wrap hero"><div><div class="mono kicker">Computer Science · University of Maryland</div><h1>Software, data,<br>and <em>things I’ve built.</em></h1><p>I’m Danyal, a Computer Science student at the University of Maryland. I build projects, contribute to open source, and learn by making things that solve clear problems.</p><div class="links"><a href="https://github.com/mdanyal4">GitHub ↗</a><a href="https://www.linkedin.com/in/mdanyal4">LinkedIn ↗</a><a href="mailto:danyalmohammad47@gmail.com">Email ↗</a></div></div><div class="stack"><div class="card one"><div class="mono">Portfolio</div><p>Projects across software, data, machine learning, and systems.</p></div><div class="card two"><div class="mono">Outside class</div><p>Bookstores, cafés, and trying to get better at chess.</p></div></div></div>
-    <section class="wrap" id="projects"><div class="section-top"><h2>Projects</h2><p>A few things I’ve built across software, data, and machine learning. Open a book for the details.</p></div><div class="shelf"><button class="book" data-project="looped">LOOPED</button><button class="book" data-project="shellweeat">SHELLWEEAT</button><button class="book" data-project="flight">FLIGHT TRACKER</button><button class="book" data-project="unix">UNIX SHELL</button><button class="book" data-project="automata">AUTOMATA</button><button class="book" data-project="movie">MOVIE REVIEWS</button><button class="book" data-project="planetterp">PLANETTERP</button><button class="book" data-project="census">CENSUS</button><button class="book" data-project="attendance">ATTENDANCE + WEATHER</button></div></section>
-    <section class="experience" id="experience"><div class="wrap"><div class="section-top"><div><div class="mono">Selected roles</div><h2>Experience</h2></div><p>Click a record to see what I worked on.</p></div><div class="vinyl-layout"><div class="turntable" aria-live="polite"><div class="platter"></div><div class="tonearm"></div><div class="now"><small>Ready to play</small><strong>Choose a record</strong><p>Campus work, open source, and student leadership.</p></div></div><div class="records"><button class="record" data-color="#e85c37" data-detail="Contributing to Scholarly XML, a TypeScript Visual Studio Code extension used by 19,000+ people."><small>Aug 2026 — present</small><h3>Student Developer</h3><p>Maryland Institute for Technology in the Humanities</p></button><button class="record" data-color="#e2ba54" data-detail="Supporting 24/7 residence-hall operations, including check-ins, packages, temporary access, keys, and housing information."><small>Aug 2025 — present</small><h3>Community Assistant</h3><p>Department of Resident Life, University of Maryland</p></button><button class="record" data-color="#67909d" data-detail="Audited housing and access records supporting 200+ summer programs and 20,000+ guests."><small>May — Aug 2026</small><h3>Audit Specialist</h3><p>Conferences and Visitor Services, University of Maryland</p></button><button class="record" data-color="#738e71" data-detail="Supported high-volume summer program check-ins, keys, access cards, room assignments, and guest questions."><small>May — Aug 2025</small><h3>Hospitality Assistant</h3><p>Conferences and Visitor Services, University of Maryland</p></button><button class="record" data-color="#c77b5b" data-detail="Co-led workshops and Python exercises for data cleaning, analysis, and visualization."><small>Feb — Apr 2026</small><h3>Data Science Track Lead</h3><p>Data Science Club, University of Maryland</p></button><button class="record" data-color="#a78ac4" data-detail="Supported students, faculty, and visitors through day-to-day front-office operations."><small>Aug 2023 — Dec 2024</small><h3>Student Assistant</h3><p>Montgomery College Dean’s Office</p></button></div></div></div></section>
-    <section class="wrap about" id="about"><div><div class="mono" style="color:var(--orange)">About</div><h2>Building as I learn.</h2><p>I’m interested in software engineering, data, and practical AI. I like the part of building where you have to understand what is actually getting in someone’s way, then make it simpler.</p><p>Right now, I’m working through Computer Science at the University of Maryland while building projects and contributing to tools people use.</p></div><div class="facts"><div class="fact"><span>Expected graduation</span><span>May 2027</span></div><div class="fact"><span>Working with</span><span>Java · Python · TypeScript</span></div><div class="fact"><span>Interested in</span><span>Software · Data · AI</span></div><div class="fact"><span>Based in</span><span>College Park, Maryland</span></div></div></section>
-  </main>
-  <dialog id="project-dialog"><article class="open-book"><button class="book-close" aria-label="Close">×</button><section class="page left"><div class="mono project-kicker" id="project-number"></div><h3 id="project-title"></h3><p id="project-description"></p><div class="tech" id="project-tech"></div></section><section class="page right"><p class="note" id="project-note"></p><a class="project-link" id="project-link" href="#" target="_blank">GitHub ↗</a></section></article></dialog>
-  <script>
-    const projects={
-      looped:{number:'01 / Web + ML',title:'Looped',description:'A Gmail-powered job application tracker that reads relevant emails and turns them into searchable application records.',tech:'React · FastAPI · scikit-learn · D3.js',note:'Built to make application tracking less scattered.',link:'https://looped-frontend.onrender.com/'},
-      shellweeat:{number:'02 / Campus web app',title:'ShellWeEat',description:'A searchable food-event app for University of Maryland students looking for free or low-cost food on campus.',tech:'Python · Flask · SQLite · HTML/CSS',note:'Live campus project.',link:'https://shellweeat.vercel.app/'},
-      flight:{number:'03 / Live data',title:'Flight Tracker',description:'A browser-based tracker that finds flights near College Park and shows the closest aircraft, route, altitude, and distance.',tech:'Python · JavaScript · ADS-B APIs',note:'A small live-data project.',link:'https://github.com/mdanyal4'},
-      unix:{number:'04 / Systems',title:'Unix Shell',description:'A C Unix shell with foreground and background processes, redirection, command parsing, and error handling.',tech:'C · POSIX · Linux',note:'A systems project.',link:'https://github.com/mdanyal4'},
-      automata:{number:'05 / Programming languages',title:'Finite Automata Toolkit',description:'An OCaml toolkit that converts regular expressions into NFAs and DFAs and evaluates accepted strings.',tech:'OCaml · Dune · Alcotest',note:'Theory turned into code.',link:'https://github.com/mdanyal4'},
-      movie:{number:'06 / NLP',title:'Movie Review Sentiment Classifier',description:'A text classifier using unigram and bigram features with perceptron and logistic-regression models.',tech:'Python · NumPy · NLP',note:'A classic machine-learning project.',link:'https://github.com/mdanyal4'},
-      planetterp:{number:'07 / NLP + data',title:'PlanetTerp Rating Prediction',description:'A review-rating project using cleaned student reviews and a pretrained BERT sentiment model.',tech:'Python · pandas · Transformers',note:'Built from over 1,000 reviews.',link:'https://github.com/mdanyal4'},
-      census:{number:'08 / Machine learning',title:'Census Income Classification',description:'A model comparison project predicting income categories from demographic and employment data.',tech:'Python · pandas · scikit-learn',note:'Compared decision tree, KNN, and random forest models.',link:'https://github.com/mdanyal4'},
-      attendance:{number:'09 / Data analysis',title:'Attendance and Weather',description:'An analysis combining attendance counts and local weather data to find patterns across class sessions.',tech:'Python · pandas · Matplotlib',note:'A small dataset answering a real question.',link:'https://github.com/mdanyal4'}
-    };
-    const dialog=document.querySelector('#project-dialog');document.querySelectorAll('[data-project]').forEach(book=>book.addEventListener('click',()=>{const p=projects[book.dataset.project];document.querySelector('#project-number').textContent=p.number;document.querySelector('#project-title').textContent=p.title;document.querySelector('#project-description').textContent=p.description;document.querySelector('#project-tech').textContent=p.tech;document.querySelector('#project-note').textContent=p.note;document.querySelector('#project-link').href=p.link;dialog.showModal()}));document.querySelector('.book-close').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
-    const player=document.querySelector('.turntable'); const now=document.querySelector('.now');
-    document.querySelectorAll('.record').forEach(record=>record.addEventListener('click',()=>{
-      if(record.classList.contains('active')){
-        record.classList.remove('active'); player.classList.remove('playing');
-        now.innerHTML='<small>Ready to play</small><strong>Choose a record</strong><p>Campus work, open source, and student leadership.</p>';
-        return;
-      }
-      document.querySelectorAll('.record').forEach(item=>item.classList.remove('active'));
-      record.classList.add('active'); player.classList.add('playing'); player.style.setProperty('--playing-color',record.dataset.color);
-      now.innerHTML=`<small>Now playing</small><strong>${record.querySelector('h3').textContent}</strong><p>${record.dataset.detail}</p>`;
-    }));
-  </script>
-  <footer><div class="wrap"><h2>Get in touch.</h2><a href="mailto:danyalmohammad47@gmail.com">danyalmohammad47@gmail.com ↗</a></div></footer>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Danyal Mohammad</title>
+<style>
+:root{--bg:#f4f1ea;--fg:#241f1a;--mut:#6f695e;--line:#e2dccd;--card:#fffdf8;--paper:#fbf7ec;--g:#8a3b2e;--g2:#f1ece0;--wood:#7a5a3c;--wood2:#5c4229;--back:#4a3622;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:inherit;text-underline-offset:3px;text-decoration-color:var(--mut)}
+a:hover{color:var(--g)}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+header div{max-width:820px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;font-size:14px}
+header nav a{margin-left:20px;text-decoration:none;color:var(--mut)}
+header nav a:hover{color:var(--g)}
+main{max-width:820px;margin:0 auto;padding:0 24px 80px}
+.hero{padding:72px 0 8px}
+.hero h1{font:400 40px/1.15 Georgia,serif;margin:0 0 16px}
+.hero h1 em{color:var(--g)}
+.hero p{color:var(--mut);max-width:560px;margin:0 0 16px}
+.links a{margin-right:18px;font-size:14px}
+section{padding-top:56px}
+h2{font:400 24px Georgia,serif;margin:0 0 6px}
+.lead{color:var(--mut);font-size:14px;margin:0 0 24px}
+.case{background:var(--back);border:10px solid var(--wood);border-radius:4px;box-shadow:inset 0 4px 14px rgba(0,0,0,.45),0 2px 0 var(--wood2)}
+.rw{display:flex;align-items:flex-end;gap:2px;padding:20px 16px 0;overflow-x:auto;min-height:218px;border-bottom:12px solid var(--wood);box-shadow:0 3px 0 var(--wood2)}
+.rw+.rw{border-top:4px solid var(--wood2)}
+.book{writing-mode:vertical-rl;padding:16px 9px;font:13px Georgia,serif;letter-spacing:.04em;border-radius:2px 2px 0 0;color:#f4eedd;transition:transform .2s;flex:none;box-shadow:inset 3px 0 rgba(255,255,255,.1),inset -2px 0 rgba(0,0,0,.2);background-repeat:no-repeat;background-image:linear-gradient(#d9b866,#d9b866),linear-gradient(#d9b866,#d9b866),linear-gradient(#d9b866,#d9b866),linear-gradient(#d9b866,#d9b866);background-size:100% 2px,100% 2px,100% 2px,100% 2px;background-position:0 9px,0 13px,0 calc(100% - 9px),0 calc(100% - 13px)}
+.book:hover{transform:translateY(-8px)}
+.book.on{transform:translateY(-16px)}
+.vb{perspective:1600px;margin-top:24px;min-height:290px}
+.vb .idle{display:block;padding:20px 0}
+.bk{position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:290px;max-width:640px;margin:0 auto}
+.rp{grid-column:2;background:var(--paper);border:9px solid var(--bc);border-left:0;border-radius:0 6px 6px 0;padding:22px;font-size:14px;box-shadow:inset 14px 0 14px -12px rgba(0,0,0,.3),0 8px 22px rgba(0,0,0,.15)}
+.lp{grid-column:1;background:var(--paper);border:9px solid var(--bc);border-right:0;border-radius:6px 0 0 6px;opacity:0;transition:opacity .3s .5s;box-shadow:0 8px 22px rgba(0,0,0,.15)}
+.bk.open .lp{opacity:1}
+.cover{position:absolute;top:0;left:50%;width:50%;height:100%;transform-origin:left center;transform-style:preserve-3d;transition:transform 1s cubic-bezier(.5,0,.2,1);z-index:2}
+.bk.open .cover{transform:rotateY(-180deg)}
+.cover>div{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.fr{display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;font:22px/1.25 Georgia,serif;color:#f4eedd;border-radius:0 4px 4px 0;box-shadow:inset 0 0 0 6px rgba(0,0,0,.08),inset 0 0 0 8px rgba(217,184,102,.7)}
+.bc{transform:rotateY(180deg);background:var(--paper);border:9px solid var(--bc);border-right:0;border-radius:6px 0 0 6px;padding:22px;box-shadow:inset -14px 0 14px -12px rgba(0,0,0,.3)}
+.bk h3{font:400 21px/1.2 Georgia,serif;margin:0 0 6px}
+.bk .s{color:var(--mut);font-size:13px;margin:0 0 12px}
+.bk p{margin:0 0 10px}
+.tg{font-size:12px;color:var(--g);text-transform:uppercase;letter-spacing:.05em}
+.rp a{font-size:14px}
+.panel{padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:8px}
+.panel h3{margin:0 0 2px;font:400 20px Georgia,serif}
+.panel .s{color:var(--mut);font-size:14px;margin:0 0 10px}
+.panel ul{margin:0;padding-left:18px}
+.panel li{margin-bottom:6px}
+.idle{color:var(--mut)}
+.player{display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start}
+.deck{perspective:900px;position:relative;width:260px;height:260px;background:var(--card);border:1px solid var(--line);border-radius:12px}
+.disc{position:absolute;left:22px;top:30px;width:200px;height:200px;border-radius:50%;background:repeating-radial-gradient(circle,#1b1d1b 0 2px,#242724 2px 4px);box-shadow:0 2px 6px rgba(0,0,0,.25)}
+.disc.spin{animation:sp 2.4s linear infinite}
+.disc i{position:absolute;left:70px;top:70px;width:60px;height:60px;border-radius:50%;background:#7a2e2e}
+.disc i:after{content:"";position:absolute;left:27px;top:27px;width:6px;height:6px;border-radius:50%;background:var(--bg)}
+.disc:before{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(120deg,rgba(255,255,255,.12),transparent 40%)}
+.arm{position:absolute;right:22px;top:20px;width:6px;height:150px;background:var(--mut);border-radius:3px;transform-origin:50% 6px;transform:rotate(-18deg);transition:transform .6s}
+.arm.on{transform:rotate(14deg)}
+.arm:after{content:"";position:absolute;left:-3px;bottom:-4px;width:12px;height:16px;background:var(--fg);border-radius:2px}
+.lid{position:absolute;inset:0;border-radius:12px;background:linear-gradient(135deg,rgba(255,255,255,.6),rgba(185,198,205,.4));border:1px solid rgba(110,125,132,.5);box-shadow:inset 0 0 0 4px rgba(255,255,255,.4),0 3px 10px rgba(0,0,0,.12);transform-origin:top center;transition:transform .9s cubic-bezier(.5,0,.2,1);z-index:3}
+.lid.up{transform:rotateX(-100deg)}
+@keyframes sp{to{transform:rotate(360deg)}}
+.sleeves{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-top:20px}
+.sl{aspect-ratio:1;border-radius:4px;padding:10px;text-align:left;background:var(--g2);border:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;font-size:13px;transition:transform .15s}
+.sl:hover{transform:translateY(-3px)}
+.sl{color:#fbf7ec;border:0}.sl.on{outline:2px solid var(--fg);outline-offset:2px}
+.sl small{opacity:.7;font-size:11px}
+.np{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--g);margin-bottom:6px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:14px 32px;margin-top:20px;font-size:14px}
+.about span{display:block;color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+@media(max-width:620px){.hero h1{font-size:32px}.about{grid-template-columns:1fr}.player{grid-template-columns:1fr}.deck{margin:0 auto}.rp,.bc{padding:14px;font-size:13px}.fr{font-size:17px;padding:12px}.bk h3{font-size:17px}}
+@media(prefers-reduced-motion:reduce){.cover{transition:none}}
+</style></head><body>
+<header><div><a href="#top" style="text-decoration:none;font-weight:600">Danyal Mohammad</a>
+<nav><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#about">About</a></nav></div></header>
+<main id="top">
+<div class="hero">
+<h1>Software, data, and things I’ve built.</h1>
+<p>Computer science student at the University of Maryland (May 2027). I build projects, contribute to open source, and learn by making things that solve clear problems.</p>
+<div class="links"><a href="https://github.com/mdanyal4">GitHub ↗</a><a href="https://www.linkedin.com/in/mdanyal4">LinkedIn ↗</a><a href="mailto:danyalmohammad47@gmail.com">Email ↗</a></div>
+</div>
+
+<section id="projects"><h2>Projects</h2>
+<p class="lead">Take a book off the shelf and open it.</p>
+<div class="case" id="case"></div>
+<div class="vb" id="vb"><span class="idle">Choose a book.</span></div></section>
+
+<section id="experience"><h2>Experience</h2>
+<p class="lead">Campus work, open source, and student leadership. Choose a record to play it.</p>
+<div class="player">
+<div class="deck"><div class="disc" id="disc"><i></i></div><div class="arm" id="arm"></div><div class="lid" id="lid"></div></div>
+<div class="panel" id="ep"><div class="np">Ready to play</div><span class="idle">Choose a record below.</span></div>
+</div>
+<div class="sleeves" id="sleeves"></div></section>
+
+<section id="about"><h2>About</h2>
+<p style="margin:0">I like the part of building where you work out what's actually getting in someone's way and make it simpler. I'm finishing my CS degree (minor in Data Science and Human Development) while building projects and contributing to tools people use.</p>
+<div class="about">
+<div><span>Education</span>B.S. Computer Science, UMD. Transferred from Montgomery College.</div>
+<div><span>Working with</span>Java, Python, TypeScript, C, C++</div>
+<div><span>Tools</span>Git, FastAPI, scikit-learn, pandas, D3.js</div>
+<div><span>Contact</span><a href="mailto:danyalmohammad47@gmail.com">danyalmohammad47@gmail.com</a></div>
+</div></section>
+</main>
+<script>
+var G="https://github.com/mdanyal4/";
+var P=[
+["Looped","Gmail job-application tracker","Reads your Gmail, classifies application emails with ML, and shows a dashboard with Sankey charts. Exports to Google Sheets.","Python · scikit-learn · D3.js",150,"#7a2e2e","","https://looped-frontend.onrender.com/"],
+["ShellWeEat","UMD free-food finder","Shows free food at UMD events and clubs, who can go, and RSVP links. Built on the TerpLink iCal feed.","Python · FastAPI · HTML/CSS",178,"#b8893a","","https://shellweeat.vercel.app/"],
+["Terraprep","UMD study-partner network","Networking and study-partner app for UMD students. Launched and in its early stage.","Web app",138,"#2f4a63","","https://terraprep.vercel.app/"],
+["Flight Tracker","Flight tracking","Describe what it shows and which data source it uses.","Add stack",166,"#3e5a47"],
+["Unix Shell","Command-line shell","Describe which features you implemented (pipes, job control, etc.).","Add stack",146,"#a4552e"],
+["Automata","Automata project","Describe what it simulates or checks.","Add stack",158,"#5e3a55"],
+["Movie Reviews","Movie review analysis","Describe the dataset and the model or analysis.","Add stack",172,"#3f6b6b"],
+["PlanetTerp Census","PlanetTerp data project","Describe what you counted or analyzed.","Add stack",150,"#5b4030"],
+["Attendance + Weather","Attendance vs. weather","Describe the question and what you found.","Add stack",186,"#b57b7b"],
+["PlanetTerp Rating Prediction","Predicting review ratings with BERT","Predicts student review ratings using a pretrained BERT model on PlanetTerp API data, with pandas for data prep and model evaluation.","BERT · pandas · Jupyter",192,"#4a5560","planetterp-review-rating-prediction"],
+["Scholarly XML","VS Code extension (open-source fork)","A VS Code extension with the features academic encoding projects typically need. Forked from raffazizzi/vscode-sxml; I contribute to it through MITH.","TypeScript",160,"#6f7240","vscode-sxml"],
+["Java Data Structures","Core data structures and algorithms","Java implementations of core data structures, algorithms, and software design patterns.","Java",170,"#8c4a3a","java-data-structures"],
+["Java OOP Foundations","Object-oriented design projects","Java programming and object-oriented design projects with GUI, testing, and file-processing exercises.","Java",148,"#c19a4b","java-oop-foundations"],
+["Creo CAD Exercises","Parametric CAD and design docs","Parametric CAD exercises and engineering design documentation made with PTC Creo Parametric.","PTC Creo Parametric",180,"#2c4a4a","creo-parametric-cad-exercises"]];
+var E=[
+["Student Developer","MITH, University of Maryland","Aug 2026 – Present",["Contribute to Scholarly XML, a TypeScript VS Code extension used by 19,000+ people, improving XML editing workflows for digital humanities research.","Work in an existing open-source codebase: reading the structure, debugging, and collaborating through GitHub."]],
+["Community Assistant","Resident Life, University of Maryland","Aug 2025 – Present",["Support 24/7 residence-hall operations on a 15-person desk team: check-ins, packages, keys, and temporary access.","Keep resident and access data accurate in MyDRL and StarRez, and follow incident procedures, escalating to RAs or UMPD when needed."]],
+["Audit Specialist","Conferences and Visitor Services, UMD","May – Aug 2026",["Maintained records for 20,000+ guests across 200+ summer programs by reconciling MyDRL and StarRez against physical key and access-card inventories.","Found discrepancies between physical and digital records and coordinated corrections with residence-hall teams."]],
+["Hospitality Assistant","Conferences and Visitor Services, UMD","May – Aug 2025",["Processed check-ins for summer programs of up to 500 participants: keys, access cards, room assignments, and questions from families.","Kept guest access records accurate in MyDRL and StarRez."]],
+["Data Science Track Lead","Data Science Club, UMD","Feb – Apr 2026",["Co-led workshops on data cleaning, analysis, and visualization with real datasets.","Wrote Python exercises in Google Colab covering pandas and visualization for students at different levels."]],
+["Student Assistant","Dean's Office, Montgomery College","Aug 2023 – Dec 2024",["Managed front-office inquiries, appointments, and routing requests to the right departments.","Designed and distributed flyers and student-facing communications."]]];
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e}
+var cs=document.getElementById('case'),vb=document.getElementById('vb'),books=[];
+[P.slice(0,7),P.slice(7)].forEach(function(grp){var r=el('div','rw');grp.forEach(function(p){
+var b=el('button','book',p[0]);b.style.height=p[4]+'px';b.style.backgroundColor=p[5];b.setAttribute('aria-label','Open '+p[0]);books.push(b);
+b.onclick=function(){books.forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+var link=(p[7]?'<a href="'+p[7]+'">Live site ↗</a> &nbsp; ':'')+(p[6]?'<a href="'+G+p[6]+'">GitHub ↗</a>':'');if(!link)link='<a href="https://github.com/mdanyal4">GitHub profile ↗</a>';
+vb.innerHTML='<div class="bk" id="bk" style="--bc:'+p[5]+'"><div class="lp"></div><div class="rp"><p>'+p[2]+'</p>'+link+'</div><div class="cover"><div class="fr" style="background:'+p[5]+'">'+p[0]+'</div><div class="bc"><h3>'+p[0]+'</h3><p class="s">'+p[1]+'</p><div class="tg">'+p[3]+'</div></div></div></div>';
+var k=document.getElementById('bk');requestAnimationFrame(function(){requestAnimationFrame(function(){k.classList.add('open')})})};
+r.appendChild(b)});cs.appendChild(r)});
+var sl=document.getElementById('sleeves'),ep=document.getElementById('ep'),disc=document.getElementById('disc'),arm=document.getElementById('arm');
+var col=['#2f4a63','#7a2e2e','#a4552e','#5e3a55','#3f6b6b','#b8893a'];
+E.forEach(function(e,i){var b=el('button','sl','<span>'+e[0]+'</span><small>'+e[2]+'</small>');b.style.background=col[i];
+b.onclick=function(){var was=b.classList.contains('on');[].forEach.call(sl.children,function(x){x.classList.remove('on')});if(was){disc.classList.remove('spin');arm.classList.remove('on');document.getElementById('lid').classList.remove('up');ep.innerHTML='<div class="np">Ready to play</div><span class="idle">Choose a record below.</span>';return}b.classList.add('on');
+document.getElementById('lid').classList.add('up');disc.querySelector('i').style.background=col[i];disc.classList.add('spin');arm.classList.add('on');
+ep.innerHTML='<div class="np">Now playing</div><h3>'+e[0]+'</h3><p class="s">'+e[1]+' · '+e[2]+'</p><ul>'+e[3].map(function(x){return'<li>'+x+'</li>'}).join('')+'</ul>'};sl.appendChild(b)});
+</script></body></html>
