@@ -55,13 +55,13 @@ h2{font:400 24px Georgia,serif;margin:0 0 6px}
 .deck{perspective:900px;position:relative;width:260px;height:260px;background:var(--card);border:1px solid var(--line);border-radius:12px}
 .disc{position:absolute;left:22px;top:30px;width:200px;height:200px;border-radius:50%;background:repeating-radial-gradient(circle,#1b1d1b 0 2px,#242724 2px 4px);box-shadow:0 2px 6px rgba(0,0,0,.25)}
 .disc.spin{animation:sp 2.4s linear infinite}
-.disc i{position:absolute;left:70px;top:70px;width:60px;height:60px;border-radius:50%;background:#7a2e2e}
+.disc i{position:absolute;left:70px;top:70px;width:60px;height:60px;border-radius:50%;background:#3a3c3a}
 .disc i:after{content:"";position:absolute;left:27px;top:27px;width:6px;height:6px;border-radius:50%;background:var(--bg)}
 .disc:before{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(120deg,rgba(255,255,255,.12),transparent 40%)}
 .arm{position:absolute;right:22px;top:20px;width:6px;height:150px;background:var(--mut);border-radius:3px;transform-origin:50% 6px;transform:rotate(-18deg);transition:transform .6s}
 .arm.on{transform:rotate(14deg)}
 .arm:after{content:"";position:absolute;left:-3px;bottom:-4px;width:12px;height:16px;background:var(--fg);border-radius:2px}
-.lid{position:absolute;inset:0;border-radius:12px;background:linear-gradient(135deg,rgba(255,255,255,.6),rgba(185,198,205,.4));border:1px solid rgba(110,125,132,.5);box-shadow:inset 0 0 0 4px rgba(255,255,255,.4),0 3px 10px rgba(0,0,0,.12);transform-origin:top center;transition:transform .9s cubic-bezier(.5,0,.2,1);z-index:3}
+.lid{position:absolute;inset:0;border-radius:12px;background:linear-gradient(135deg,rgba(255,255,255,.3),rgba(185,198,205,.18));border:1px solid rgba(110,125,132,.5);box-shadow:inset 0 0 0 4px rgba(255,255,255,.4),0 3px 10px rgba(0,0,0,.12);transform-origin:top center;transition:transform .9s cubic-bezier(.5,0,.2,1);z-index:3}
 .lid.up{transform:rotateX(-100deg)}
 @keyframes sp{to{transform:rotate(360deg)}}
 .sleeves{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-top:20px}
@@ -72,11 +72,49 @@ h2{font:400 24px Georgia,serif;margin:0 0 6px}
 .np{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--g);margin-bottom:6px}
 .about{display:grid;grid-template-columns:1fr 1fr;gap:14px 32px;margin-top:20px;font-size:14px}
 .about span{display:block;color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.wall{margin:24px 0 8px;padding:20px 14px 14px;background:#ece1ca;border:1px solid var(--line);border-radius:10px;box-shadow:inset 0 0 40px rgba(120,90,50,.12)}
+.wl{font:17px "Bradley Hand","Segoe Print","Noteworthy",cursive;color:#5a4630;margin:4px 0 2px 6px}
+.str{position:relative;display:flex;flex-wrap:wrap;justify-content:center;gap:22px 16px;padding:26px 4px 14px}
+.str:before{content:"";position:absolute;top:8px;left:0;right:0;height:2px;background:#8a6a45;border-radius:2px}
+.pol{position:relative;width:112px;background:#fffdf8;padding:8px 8px 10px;box-shadow:0 3px 8px rgba(60,40,20,.28);transform:rotate(var(--r));transform-origin:50% -14px;transition:transform .3s}
+.pol:hover{transform:rotate(0) translateY(2px)}
+.pol:before{content:"";position:absolute;top:-17px;left:50%;width:9px;height:22px;margin-left:-4px;background:#c9a56b;border-radius:2px;box-shadow:0 1px 2px rgba(0,0,0,.35)}
+.ph{height:82px;display:flex;align-items:center;justify-content:center;color:#fbf7ec;font:600 20px Georgia,serif}
+.cap{font:15px/1.2 "Bradley Hand","Segoe Print","Noteworthy",cursive;margin-top:8px;color:#3b2f22;text-align:center}
+.desk{display:grid;grid-template-columns:1fr 1.25fr;gap:30px;margin-top:30px;align-items:center}
+.frame{border:10px solid #7a5a3c;border-radius:3px;background:#fbf7ec;padding:5px;box-shadow:0 4px 10px rgba(60,40,20,.25),inset 0 0 0 1px #5c4229;transform:rotate(-1.2deg)}
+.frame .in{border:1px solid #c9b98f;padding:18px 14px;text-align:center}
+.frame small{display:block;font:11px Georgia,serif;letter-spacing:.18em;text-transform:uppercase;color:#8a7a5a}
+.frame h3{font:400 19px/1.25 Georgia,serif;margin:8px 0 6px}
+.frame p{margin:0;font-size:13px;color:var(--mut)}
+.seal{width:36px;height:36px;border-radius:50%;background:#b8893a;color:#fbf7ec;font:600 9px/36px Georgia,serif;letter-spacing:.04em;margin:12px auto 0;box-shadow:0 0 0 3px rgba(184,137,58,.3)}
+.post{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:18px;background:#fbf7ec;border:1px solid #d9cfb4;padding:18px;box-shadow:0 4px 10px rgba(60,40,20,.22);transform:rotate(1.2deg)}
+.post .msg{padding-right:16px;border-right:1px solid #d9cfb4}
+.hand{font:22px "Bradley Hand","Segoe Print","Noteworthy",cursive;color:#3b2f22;margin-bottom:6px}
+.post p{margin:0;font-size:13px;color:var(--mut)}
+.addr{position:relative;padding-top:50px}
+.stamp{position:absolute;top:0;right:0;width:40px;height:48px;border:2px dashed #9b2c2c;background:#f3e3d0;box-shadow:inset 0 0 0 4px #fbf7ec}
+.pm{position:absolute;top:2px;right:34px;width:44px;height:44px;border:2px solid rgba(90,70,48,.35);border-radius:50%}
+.ln{display:block;font-size:13px;color:#3b2f22;border-bottom:1px solid #c9bd9b;padding:6px 0 3px;text-decoration:none;word-break:break-all}
+.ln:hover{color:var(--g)}
+.rshelf{position:relative;margin:30px 0 14px}
+.sleeves{display:flex;align-items:flex-end;gap:8px;margin:0;padding:62px 18px 0;background:#ece1ca;border:1px solid var(--line);border-bottom:0;border-radius:10px 10px 0 0;box-shadow:inset 0 0 40px rgba(120,90,50,.12);overflow-x:auto}
+.sleeves .sl{position:relative;flex:none;width:112px;height:112px;aspect-ratio:auto;margin-bottom:0;border-radius:2px;box-shadow:0 2px 6px rgba(40,25,10,.35),inset 0 0 0 1px rgba(255,255,255,.12);transition:transform .25s}
+.sleeves .sl{--pk:24px}
+.sleeves .sl:before{content:"";position:absolute;left:50%;top:calc(-1 * var(--pk));width:96px;height:96px;margin-left:-48px;border-radius:50%;background:radial-gradient(circle,#f4f1ea 0 2px,transparent 3px),radial-gradient(circle,var(--lc,#7a2e2e) 0 16px,transparent 17px),repeating-radial-gradient(circle,#1b1d1b 0 2px,#2a2c2a 2px 4px);clip-path:inset(0 0 calc(100% - var(--pk)) 0);transition:top .25s,clip-path .25s}
+.sleeves .sl:hover{transform:translateY(-6px)}
+.sleeves .sl.on,.sleeves .sl.on:hover{outline:0;transform:translateY(-8px)}
+.sleeves .sl.on{--pk:48px}
+.ledge{position:relative;height:14px;background:linear-gradient(#8a6a45,#6b4f33);border-radius:0 0 4px 4px;box-shadow:0 5px 8px rgba(60,40,20,.3)}
+.ledge:before,.ledge:after{content:"";position:absolute;top:100%;width:12px;height:20px;background:#5c4229;border-radius:0 0 3px 3px}
+.ledge:before{left:12%}.ledge:after{right:12%}
+.sleeves .sl:first-child{margin-left:auto}.sleeves .sl:last-child{margin-right:auto}
+@media(max-width:620px){.desk{grid-template-columns:1fr}.post{grid-template-columns:1fr}.post .msg{border-right:0;padding-right:0}}
 @media(max-width:620px){.hero h1{font-size:32px}.about{grid-template-columns:1fr}.player{grid-template-columns:1fr}.deck{margin:0 auto}.rp,.bc{padding:14px;font-size:13px}.fr{font-size:17px;padding:12px}.bk h3{font-size:17px}}
 @media(prefers-reduced-motion:reduce){.cover{transition:none}}
 </style></head><body>
 <header><div><a href="#top" style="text-decoration:none;font-weight:600">Danyal Mohammad</a>
-<nav><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#about">About</a></nav></div></header>
+<nav><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#about">About</a></nav></div></header>
 <main id="top">
 <div class="hero">
 <h1>Software, data, and things I’ve built.</h1>
@@ -84,27 +122,28 @@ h2{font:400 24px Georgia,serif;margin:0 0 6px}
 <div class="links"><a href="https://github.com/mdanyal4">GitHub ↗</a><a href="https://www.linkedin.com/in/mdanyal4">LinkedIn ↗</a><a href="mailto:danyalmohammad47@gmail.com">Email ↗</a></div>
 </div>
 
-<section id="projects"><h2>Projects</h2>
-<p class="lead">Take a book off the shelf and open it.</p>
-<div class="case" id="case"></div>
-<div class="vb" id="vb"><span class="idle">Choose a book.</span></div></section>
-
 <section id="experience"><h2>Experience</h2>
 <p class="lead">Campus work, open source, and student leadership. Choose a record to play it.</p>
 <div class="player">
 <div class="deck"><div class="disc" id="disc"><i></i></div><div class="arm" id="arm"></div><div class="lid" id="lid"></div></div>
 <div class="panel" id="ep"><div class="np">Ready to play</div><span class="idle">Choose a record below.</span></div>
 </div>
-<div class="sleeves" id="sleeves"></div></section>
+<div class="rshelf"><div class="sleeves" id="sleeves"></div><div class="ledge"></div></div></section>
+
+<section id="projects"><h2>Projects</h2>
+<p class="lead">Take a book off the shelf and open it.</p>
+<div class="case" id="case"></div>
+<div class="vb" id="vb"><span class="idle">Choose a book.</span></div></section>
 
 <section id="about"><h2>About</h2>
 <p style="margin:0">I like the part of building where you work out what's actually getting in someone's way and make it simpler. I'm finishing my Computer Science degree with minors in Data Science and Human Development, while also building projects and contributing to tools people use.</p>
-<div class="about">
-<div><span>Education</span>B.S. Computer Science, University of Maryland</div>
-<div><span>Working with</span>Java, Python, TypeScript, C, C++</div>
-<div><span>Tools</span>Git, FastAPI, scikit-learn, pandas, D3.js</div>
-<div><span>Contact</span><a href="mailto:danyalmohammad47@gmail.com">danyalmohammad47@gmail.com</a></div>
-</div></section>
+<div class="wall"><div class="wl">Languages</div><div class="str"><div class="pol" style="--r:-3deg"><div class="ph" style="background:#9b2c2c">.java</div><div class="cap">Java</div></div><div class="pol" style="--r:2deg"><div class="ph" style="background:#2f5f9e">.py</div><div class="cap">Python</div></div><div class="pol" style="--r:-2deg"><div class="ph" style="background:#d4a82a;color:#2b2411">.c</div><div class="cap">C</div></div><div class="pol" style="--r:3deg"><div class="ph" style="background:#d9822b">.ml</div><div class="cap">OCaml</div></div><div class="pol" style="--r:-1deg"><div class="ph" style="background:#4a5560">.ts</div><div class="cap">TypeScript</div></div><div class="pol" style="--r:2deg"><div class="ph" style="background:#6f7240">.js</div><div class="cap">JavaScript</div></div><div class="pol" style="--r:-3deg"><div class="ph" style="background:#5b4030">&lt;/&gt;</div><div class="cap">HTML/CSS</div></div><div class="pol" style="--r:1deg"><div class="ph" style="background:#2c4a4a">.asm</div><div class="cap">x86 Assembly</div></div></div><div class="wl">Tools</div><div class="str"><div class="pol" style="--r:-3deg"><div class="ph" style="background:#5e3a55">git</div><div class="cap">Git</div></div><div class="pol" style="--r:2deg"><div class="ph" style="background:#3f6b6b">API</div><div class="cap">FastAPI</div></div><div class="pol" style="--r:-2deg"><div class="ph" style="background:#8c4a3a">ML</div><div class="cap">scikit-learn</div></div><div class="pol" style="--r:3deg"><div class="ph" style="background:#4a5560">df</div><div class="cap">pandas</div></div><div class="pol" style="--r:-1deg"><div class="ph" style="background:#6f7240">D3</div><div class="cap">D3.js</div></div><div class="pol" style="--r:2deg"><div class="ph" style="background:#2c4a4a">$_</div><div class="cap">Linux</div></div></div></div>
+<div class="desk">
+<div class="frame"><div class="in"><small>Education</small><h3>University of Maryland, College Park</h3><p>B.S. Computer Science</p><p>Minors in Data Science and Human Development</p><p style="margin-top:6px">Expected May 2027</p><div class="seal">UMD</div></div></div>
+<div class="post"><div class="msg"><div class="hand">Say hello.</div><p>I'm open to software engineering roles. Email is the quickest way to reach me.</p></div>
+<div class="addr"><div class="stamp"></div><div class="pm"></div><a class="ln" href="mailto:danyalmohammad47@gmail.com">danyalmohammad47@gmail.com</a><a class="ln" href="https://github.com/mdanyal4">github.com/mdanyal4</a><a class="ln" href="https://www.linkedin.com/in/mdanyal4">linkedin.com/in/mdanyal4</a></div></div>
+</div>
+</section>
 </main>
 <script>
 var G="https://github.com/mdanyal4/";
@@ -134,15 +173,15 @@ function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null
 var cs=document.getElementById('case'),vb=document.getElementById('vb'),books=[];
 [P.slice(0,7),P.slice(7)].forEach(function(grp){var r=el('div','rw');grp.forEach(function(p){
 var b=el('button','book',p[0]);b.style.height=p[4]+'px';b.style.backgroundColor=p[5];b.setAttribute('aria-label','Open '+p[0]);books.push(b);
-b.onclick=function(){books.forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+b.onclick=function(){var was=b.classList.contains('on');books.forEach(function(x){x.classList.remove('on')});if(was){var kk=document.getElementById('bk');if(kk){kk.classList.remove('open');setTimeout(function(){if(!books.some(function(x){return x.classList.contains('on')}))vb.innerHTML='<span class="idle">Choose a book.</span>'},1000)}return}b.classList.add('on');
 var link=(p[7]?'<a href="'+p[7]+'">Live site ↗</a> &nbsp; ':'')+(p[6]?'<a href="'+G+p[6]+'">GitHub ↗</a>':'');if(!link)link='<a href="https://github.com/mdanyal4">GitHub profile ↗</a>';
 vb.innerHTML='<div class="bk" id="bk" style="--bc:'+p[5]+'"><div class="lp"></div><div class="rp"><p>'+p[2]+'</p>'+link+'</div><div class="cover"><div class="fr" style="background:'+p[5]+'">'+p[0]+'</div><div class="bc"><h3>'+p[0]+'</h3><p class="s">'+p[1]+'</p><div class="tg">'+p[3]+'</div></div></div></div>';
 var k=document.getElementById('bk');requestAnimationFrame(function(){requestAnimationFrame(function(){k.classList.add('open')})})};
 r.appendChild(b)});cs.appendChild(r)});
 var sl=document.getElementById('sleeves'),ep=document.getElementById('ep'),disc=document.getElementById('disc'),arm=document.getElementById('arm');
 var col=['#2f4a63','#7a2e2e','#a4552e','#5e3a55','#3f6b6b','#b8893a'];
-E.forEach(function(e,i){var b=el('button','sl','<span>'+e[0]+'</span><small>'+e[2]+'</small>');b.style.background=col[i];
-b.onclick=function(){var was=b.classList.contains('on');[].forEach.call(sl.children,function(x){x.classList.remove('on')});if(was){disc.classList.remove('spin');arm.classList.remove('on');document.getElementById('lid').classList.remove('up');ep.innerHTML='<div class="np">Ready to play</div><span class="idle">Choose a record below.</span>';return}b.classList.add('on');
+E.forEach(function(e,i){var b=el('button','sl','<span>'+e[0]+'</span><small>'+e[2]+'</small>');b.style.background=col[i];b.style.setProperty("--lc",col[i]);
+b.onclick=function(){var was=b.classList.contains('on');[].forEach.call(sl.children,function(x){x.classList.remove('on')});if(was){disc.classList.remove('spin');arm.classList.remove('on');disc.querySelector('i').style.background='';document.getElementById('lid').classList.remove('up');ep.innerHTML='<div class="np">Ready to play</div><span class="idle">Choose a record below.</span>';return}b.classList.add('on');
 document.getElementById('lid').classList.add('up');disc.querySelector('i').style.background=col[i];disc.classList.add('spin');arm.classList.add('on');
 ep.innerHTML='<div class="np">Now playing</div><h3>'+e[0]+'</h3><p class="s">'+e[1]+' · '+e[2]+'</p><ul>'+e[3].map(function(x){return'<li>'+x+'</li>'}).join('')+'</ul>'};sl.appendChild(b)});
 </script></body></html>
