@@ -119,8 +119,6 @@ h2{font:400 24px Georgia,serif;margin:0 0 6px}
 .ef{position:absolute;inset:0;z-index:2;background:#efe3c6;clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);border-radius:3px}
 .ef span{position:absolute;left:0;right:0;bottom:16px;text-align:center;font:17px "Bradley Hand","Segoe Print","Noteworthy",cursive;color:#5a4630}
 .flap{position:absolute;left:0;top:0;width:100%;height:96px;background:#e0d0aa;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:50% 0;transition:transform .5s,background .5s;z-index:3}
-.wax{position:absolute;left:50%;top:76px;width:40px;height:40px;margin-left:-20px;z-index:4;border-radius:52% 48% 50% 50%/50% 52% 48% 50%;background:radial-gradient(circle at 36% 30%,#cf4a3c,#a02418 55%,#74180f);box-shadow:inset -3px -4px 6px rgba(60,10,5,.5),inset 3px 3px 5px rgba(255,160,140,.35),0 3px 5px rgba(0,0,0,.4);transition:opacity .25s,transform .25s}
-.wax:after{content:"";position:absolute;left:8px;top:8px;width:24px;height:24px;border-radius:50%;border:2px solid rgba(90,15,8,.45);box-shadow:1px 1px 0 rgba(255,170,150,.3)}
 .hint{font:17px "Bradley Hand","Segoe Print","Noteworthy",cursive;color:#5a4630;transition:opacity .3s;margin-top:-4px}
 .env.open ~ .hint{opacity:0;pointer-events:none}
 .env:not(.open){animation:wig 4.5s ease-in-out 2s infinite}
@@ -139,6 +137,33 @@ h2{font:400 24px Georgia,serif;margin:0 0 6px}
 .env{transform:rotate(2deg);transition:transform .4s}
 .env.open{transform:rotate(0)}
 .post{grid-column:1/-1;grid-row:2;max-width:412px;width:100%;justify-self:center}
+.disc.paused{animation-play-state:paused}
+.tm{margin-top:14px}
+.bar{height:4px;background:var(--line);border-radius:2px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--g);transition:width 1s linear}
+.tt{display:flex;justify-content:space-between;font:12px ui-monospace,Menlo,monospace;color:var(--mut);margin-top:5px}
+.ctl{display:flex;gap:16px;margin-top:8px;font-size:13px}
+.ctl button,.pa{color:var(--fg);text-decoration:underline;text-underline-offset:3px;font-size:inherit}
+.ctl button:hover,.pa:hover{color:var(--g)}
+.pwr{position:absolute;right:12px;bottom:10px;width:58px;height:52px;z-index:6;background:none;padding:0}
+.pwr:before{content:"";position:absolute;left:50%;top:0;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:#b9ad92;box-shadow:inset 0 1px 1px rgba(0,0,0,.25);transition:background .2s,box-shadow .2s}
+.pwr.on:before{background:#e3a02b;box-shadow:0 0 6px 2px rgba(227,160,43,.7)}
+.kn{position:absolute;left:14px;top:9px;width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ecd9a6,#b8893a 60%,#8a6a2a);border:1px solid #7a5a22;box-shadow:0 2px 3px rgba(60,40,20,.4),inset 0 1px 1px rgba(255,255,255,.55);transform:rotate(-50deg);transition:transform .3s cubic-bezier(.4,1.4,.5,1)}
+.pwr.on .kn{transform:rotate(50deg)}
+.kn i{position:absolute;left:50%;top:3px;width:2px;height:9px;margin-left:-1px;background:#4a3820;border-radius:1px}
+.pwr .lb{position:absolute;bottom:0;font:8px Georgia,serif;letter-spacing:.12em;text-transform:uppercase;color:#8a7a5a}
+.pwr .l0{left:0}.pwr .l1{right:0}
+.pwr:active .kn{filter:brightness(.95)}
+.tc{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;margin-top:12px}
+.tc button{display:flex;align-items:center;justify-content:center;color:#5a4630;transition:transform .12s,color .15s}
+.tc #bk{justify-self:start}.tc #nx{justify-self:end}
+.tc #bk svg,.tc #nx svg{width:26px;height:26px}
+.tc #bk:hover,.tc #nx:hover{color:var(--g);transform:scale(1.08)}
+.tc .big{width:46px;height:46px;border-radius:50%;background:linear-gradient(#9a7a52,#7a5a3c);color:#fbf7ec;box-shadow:0 2px 4px rgba(60,40,20,.35),inset 0 1px 0 rgba(255,255,255,.25)}
+.tc .big:hover{filter:brightness(1.08)}
+.tc .big:active{transform:translateY(1px)}
+.wax{position:absolute;left:50%;top:73px;width:46px;height:46px;margin-left:-23px;z-index:4;border-radius:48% 52% 46% 54%/54% 46% 52% 48%;background:radial-gradient(circle at 34% 28%,#d85a4a 0,#b0291c 42%,#7d1a10 100%);box-shadow:inset 0 0 0 3px rgba(105,18,10,.35),inset -3px -4px 7px rgba(55,8,4,.55),inset 3px 3px 5px rgba(255,170,150,.3),0 3px 5px rgba(0,0,0,.4);transition:opacity .25s,transform .25s}
+.wax:after{content:"";position:absolute;left:9px;top:9px;width:28px;height:28px;border-radius:50%;background:rgba(90,14,8,.18);box-shadow:inset 1px 2px 3px rgba(40,5,2,.55),0 1px 0 rgba(255,170,150,.35)}
 @media(max-width:620px){.envwrap,.frame{grid-column:1;grid-row:auto}.post{grid-row:auto;max-width:none}}
 .envwrap{margin-top:0;min-height:340px;justify-content:flex-end}
 .env,.env.open{margin-top:0}
@@ -159,7 +184,7 @@ h2{font:400 24px Georgia,serif;margin:0 0 6px}
 <section id="experience"><h2>Experience</h2>
 <p class="lead">Campus work, open source, and student leadership. Choose a record to play it.</p>
 <div class="player">
-<div class="deck"><div class="disc" id="disc"><i></i></div><div class="arm" id="arm"></div><div class="lid" id="lid"></div></div>
+<div class="deck"><div class="disc" id="disc"><i></i></div><div class="arm" id="arm"></div><div class="lid" id="lid"></div><button class="pwr" id="pwr" aria-label="Turn the record player on or off" aria-pressed="false"><span class="kn"><i></i></span><span class="lb l0">Off</span><span class="lb l1">On</span></button></div>
 <div class="panel" id="ep"><div class="np">Ready to play</div><span class="idle">Choose a record below.</span></div>
 </div>
 <div class="rshelf"><div class="sleeves" id="sleeves"></div><div class="ledge"></div></div></section>
@@ -203,12 +228,12 @@ var P=[
 ["Java OOP Foundations","Object-oriented design projects","Java programming and object-oriented design projects with GUI, testing, and file-processing exercises.","Java",148,"#c19a4b","java-oop-foundations"],
 ["Creo CAD Exercises","Parametric CAD and design docs","Parametric CAD exercises and engineering design documentation made with PTC Creo Parametric.","PTC Creo Parametric",180,"#2c4a4a","creo-parametric-cad-exercises"]];
 var E=[
-["Software Engineer Intern","MITH, University of Maryland","Aug 2026 – Present",["Contribute to Scholarly XML, a TypeScript VS Code extension used by 19,000+ people. Improved XML error diagnostics by finding malformed entity references at their source, checked with regression tests and manual editor testing.","Built initial automatic tag-renaming logic with stack-based matching and VS Code\u2019s LinkedEditingRangeProvider API, so opening and closing tags stay in sync across nested XML elements.","Added an expand-to-parent command that selects the enclosing XML element, including command registration and keyboard shortcuts."]],
-["Community Assistant","Resident Life, University of Maryland","Aug 2025 – Present",["Support 24/7 residence-hall operations on a 15-person desk team: check-ins, packages, keys, and temporary access.","Keep resident and access data accurate in MyDRL and StarRez, and follow incident procedures, escalating to RAs or UMPD when needed."]],
-["Audit Specialist","Conferences and Visitor Services, UMD","May 2026 – Aug 2026",["Maintained records for 20,000+ guests across 200+ summer programs by reconciling MyDRL and StarRez against physical key and access-card inventories.","Found discrepancies between physical and digital records and coordinated corrections with residence-hall teams."]],
-["Hospitality Assistant","Conferences and Visitor Services, UMD","May 2025 – Aug 2025",["Processed check-ins for summer programs of up to 500 participants: keys, access cards, room assignments, and questions from families.","Kept guest access records accurate in MyDRL and StarRez."]],
-["Data Science Track Lead","Data Science Club, UMD","Feb 2026 – May 2026",["Co-led workshops on data cleaning, analysis, and visualization with real datasets.","Wrote Python exercises in Google Colab covering pandas and visualization for students at different levels."]],
-["Student Assistant","Dean's Office, Montgomery College","Aug 2023 – Dec 2024",["Managed front-office inquiries, appointments, and routing requests to the right departments.","Designed and distributed flyers and student-facing communications."]]];
+["Software Engineer Intern","MITH, University of Maryland","Aug 2026 – Present",["Improved XML error diagnostics in Scholarly XML, a VS Code extension with 19,000+ users, validated with regression tests.","Built automatic tag renaming with stack matching and the LinkedEditingRangeProvider API, plus an expand-to-parent command."]],
+["Community Assistant","Resident Life, University of Maryland","Aug 2025 – Present",["Resolve resident and visitor requests on a 15-person, 24/7 desk team, from check-ins and packages to keys and access.","Keep MyDRL and StarRez records accurate, run key and access audits, and escalate safety incidents by procedure."]],
+["Audit Specialist","Conferences and Visitor Services, UMD","May 2026 – Aug 2026",["Reconciled MyDRL and StarRez records against key and access-card inventories for 20,000+ guests across 200+ programs.","Validated check-ins for programs of up to 500 people and traced discrepancies, coordinating fixes with residence-hall teams."]],
+["Hospitality Assistant","Conferences and Visitor Services, UMD","May 2025 – Aug 2025",["Handled arrivals for programs of up to 500 participants: check-ins, keys, access cards, and room assignments.","Kept front-desk operations reliable across multiple halls and logged key and access-card updates accurately in StarRez."]],
+["Data Science Track Lead","Data Science Club, UMD","Feb 2026 – May 2026",["Co-led hands-on workshops teaching data cleaning, analysis, and visualization with real-world datasets.","Designed Python and Google Colab exercises on pandas and visualization, and helped students debug errors live."]],
+["Administrative Assistant","Dean’s Office, Montgomery College","Aug 2023 – Dec 2024",["Managed front-office inquiries and appointments for students, faculty, and visitors, routing requests to the right teams.","Completed time-sensitive Dean’s Office work and designed flyers that raised awareness of campus programs."]]];
 function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e}
 var cs=document.getElementById('case'),vb=document.getElementById('vb'),books=[];
 [P.slice(0,7),P.slice(7)].forEach(function(grp){var r=el('div','rw');grp.forEach(function(p){
@@ -220,10 +245,25 @@ var k=document.getElementById('bk');requestAnimationFrame(function(){requestAnim
 r.appendChild(b)});cs.appendChild(r)});
 var sl=document.getElementById('sleeves'),ep=document.getElementById('ep'),disc=document.getElementById('disc'),arm=document.getElementById('arm');
 var col=['#2f4a63','#7a2e2e','#a4552e','#5e3a55','#3f6b6b','#b8893a'];
+var lid=document.getElementById('lid'),lab=disc.querySelector('i'),pwr=document.getElementById('pwr'),DUR=10,cur=-1,t=0,timer=null,paused=false,btns=[];
+var S='<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">';
+var IC={bk:S+'<path d="M6 5h2v14H6zM20 5v14L9.5 12z"/></svg>',nx:S+'<path d="M16 5h2v14h-2zM4 5v14l10.5-7z"/></svg>',pa:S+'<path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>',pl:S+'<path d="M8 5v14l11-7z"/></svg>'};
+function fmt(n){return Math.floor(n/60)+':'+('0'+(n%60)).slice(-2)}
+function setPwr(on){pwr.classList.toggle('on',on);pwr.setAttribute('aria-pressed',on)}
+function idle(){ep.innerHTML='<div class="np">Ready to play</div><span class="idle">Press the power button on the player, or choose a record below.</span>'}
+function reset(){clearInterval(timer);timer=null;paused=false;cur=-1;btns.forEach(function(x){x.classList.remove('on')});disc.classList.remove('spin','paused');arm.classList.remove('on');lab.style.background='';lid.classList.remove('up');setPwr(false)}
+function togglePause(){paused=!paused;disc.classList.toggle('paused',paused);var p=document.getElementById('pp');if(p){p.innerHTML=paused?IC.pl:IC.pa;p.setAttribute('aria-label',paused?'Play':'Pause')}}
+function back(){if(t>3||cur<=0)start(cur);else start(cur-1)}
+function next(){if(cur<E.length-1)start(cur+1);else done()}
+function view(i){var e=E[i];ep.innerHTML='<div class="np">Now playing · Track '+(i+1)+' of '+E.length+'</div><h3>'+e[0]+'</h3><p class="s">'+e[1]+' · '+e[2]+'</p><ul>'+e[3].map(function(x){return'<li>'+x+'</li>'}).join('')+'</ul><div class="tm"><div class="bar"><i id="pb"></i></div><div class="tt"><span id="tc">0:00</span><span>'+fmt(DUR)+'</span></div><div class="tc"><button id="bk" aria-label="Previous">'+IC.bk+'</button><button id="pp" class="big" aria-label="Pause">'+IC.pa+'</button><button id="nx" aria-label="Next">'+IC.nx+'</button></div></div>';
+document.getElementById('bk').onclick=back;document.getElementById('pp').onclick=togglePause;document.getElementById('nx').onclick=next}
+function start(i){clearInterval(timer);cur=i;t=0;paused=false;btns.forEach(function(x,k){x.classList.toggle('on',k==i)});lid.classList.add('up');lab.style.background=col[i];disc.classList.remove('paused');disc.classList.add('spin');arm.classList.add('on');setPwr(true);view(i);timer=setInterval(tick,1000)}
+function done(){reset();ep.innerHTML='<div class="np">End of side</div><span class="idle">Press the power button to play again.</span>'}
+function tick(){if(paused)return;t++;var pb=document.getElementById('pb'),tc=document.getElementById('tc');if(pb)pb.style.width=(t/DUR*100)+'%';if(tc)tc.textContent=fmt(t);if(t>=DUR)next()}
+pwr.onclick=function(){if(cur>=0){reset();idle()}else start(0)};
 E.forEach(function(e,i){var b=el('button','sl','<span>'+e[0]+'</span><small>'+e[2]+'</small>');b.style.background=col[i];b.style.setProperty("--lc",col[i]);
-b.onclick=function(){var was=b.classList.contains('on');[].forEach.call(sl.children,function(x){x.classList.remove('on')});if(was){disc.classList.remove('spin');arm.classList.remove('on');disc.querySelector('i').style.background='';document.getElementById('lid').classList.remove('up');ep.innerHTML='<div class="np">Ready to play</div><span class="idle">Choose a record below.</span>';return}b.classList.add('on');
-document.getElementById('lid').classList.add('up');disc.querySelector('i').style.background=col[i];disc.classList.add('spin');arm.classList.add('on');
-ep.innerHTML='<div class="np">Now playing</div><h3>'+e[0]+'</h3><p class="s">'+e[1]+' · '+e[2]+'</p><ul>'+e[3].map(function(x){return'<li>'+x+'</li>'}).join('')+'</ul>'};sl.appendChild(b)});
+b.onclick=function(){if(cur===i){reset();idle();return}start(i)};btns.push(b);sl.appendChild(b)});
+idle();
 </script><script>
 (function(){var env=document.getElementById('env'),ltr=document.getElementById('ltr'),dl=document.getElementById('dl1');
 function tog(){var o=env.classList.toggle('open');ltr.tabIndex=o?0:-1;dl.classList.toggle('on',o)}
