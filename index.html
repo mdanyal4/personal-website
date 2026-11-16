@@ -27,6 +27,9 @@ h2{font:400 24px Georgia,serif;margin:0 0 6px}
 .rw{display:flex;align-items:flex-end;gap:2px;padding:20px 16px 0;overflow-x:auto;min-height:218px;border-bottom:12px solid var(--wood);box-shadow:0 3px 0 var(--wood2)}
 .rw+.rw{border-top:4px solid var(--wood2)}
 .book{writing-mode:vertical-rl;padding:16px 9px;font:13px Georgia,serif;letter-spacing:.04em;border-radius:2px 2px 0 0;color:#f4eedd;transition:transform .2s;flex:none;box-shadow:inset 3px 0 rgba(255,255,255,.1),inset -2px 0 rgba(0,0,0,.2);background-repeat:no-repeat;background-image:linear-gradient(#d9b866,#d9b866),linear-gradient(#d9b866,#d9b866),linear-gradient(#d9b866,#d9b866),linear-gradient(#d9b866,#d9b866);background-size:100% 2px,100% 2px,100% 2px,100% 2px;background-position:0 9px,0 13px,0 calc(100% - 9px),0 calc(100% - 13px)}
+.dv{flex:none;align-self:flex-end;position:relative;width:5px;height:210px;margin:0 6px;background:linear-gradient(90deg,#d9caa0,#f1e7cc);border:1px solid #b9a679;border-bottom:0;border-radius:1px 1px 0 0;box-shadow:2px 0 4px rgba(0,0,0,.4)}
+.book+.dv{margin-left:28px}
+.dvt{position:absolute;top:0;left:-1px;white-space:nowrap;padding:3px 9px 3px 8px;font:10px/14px Georgia,serif;letter-spacing:.14em;text-transform:uppercase;color:#4a3622;background:linear-gradient(#f4ebd2,#e6d8b2);border:1px solid #b9a679;border-left:0;border-radius:0 3px 3px 0;box-shadow:1px 2px 3px rgba(0,0,0,.35)}
 .book:hover{transform:translateY(-8px)}
 .book.on{transform:translateY(-16px)}
 .vb{perspective:1600px;margin-top:24px;min-height:290px}
@@ -145,15 +148,13 @@ h2{font:400 24px Georgia,serif;margin:0 0 6px}
 .ctl{display:flex;gap:16px;margin-top:8px;font-size:13px}
 .ctl button,.pa{color:var(--fg);text-decoration:underline;text-underline-offset:3px;font-size:inherit}
 .ctl button:hover,.pa:hover{color:var(--g)}
-.pwr{position:absolute;right:12px;bottom:10px;width:58px;height:52px;z-index:6;background:none;padding:0}
-.pwr:before{content:"";position:absolute;left:50%;top:0;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:#b9ad92;box-shadow:inset 0 1px 1px rgba(0,0,0,.25);transition:background .2s,box-shadow .2s}
-.pwr.on:before{background:#e3a02b;box-shadow:0 0 6px 2px rgba(227,160,43,.7)}
-.kn{position:absolute;left:14px;top:9px;width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ecd9a6,#b8893a 60%,#8a6a2a);border:1px solid #7a5a22;box-shadow:0 2px 3px rgba(60,40,20,.4),inset 0 1px 1px rgba(255,255,255,.55);transform:rotate(-50deg);transition:transform .3s cubic-bezier(.4,1.4,.5,1)}
-.pwr.on .kn{transform:rotate(50deg)}
-.kn i{position:absolute;left:50%;top:3px;width:2px;height:9px;margin-left:-1px;background:#4a3820;border-radius:1px}
-.pwr .lb{position:absolute;bottom:0;font:8px Georgia,serif;letter-spacing:.12em;text-transform:uppercase;color:#8a7a5a}
-.pwr .l0{left:0}.pwr .l1{right:0}
-.pwr:active .kn{filter:brightness(.95)}
+.pwr{position:absolute;right:12px;bottom:10px;width:40px;height:28px;z-index:6;background:none;padding:0}
+.pwr:before{content:"";position:absolute;left:1px;top:0;width:4px;height:4px;border-radius:50%;background:#b9ad92;box-shadow:inset 0 1px 1px rgba(0,0,0,.25);transition:background .2s,box-shadow .2s}
+.pwr.on:before{background:#e3a02b;box-shadow:0 0 5px 1px rgba(227,160,43,.7)}
+.pwr .key{position:absolute;left:0;right:0;bottom:2px;height:14px;border-radius:2px;border:1px solid #6b4f1f;background:repeating-linear-gradient(90deg,rgba(0,0,0,.07) 0 1px,transparent 1px 4px),linear-gradient(#e8dbb4,#bfa971);box-shadow:0 2px 0 #6b4f1f,inset 0 1px 0 rgba(255,255,255,.65);transition:transform .12s,box-shadow .12s}
+.pwr.on .key{transform:translateY(1px);box-shadow:0 1px 0 #6b4f1f,inset 0 1px 2px rgba(0,0,0,.25)}
+.pwr .lb{position:absolute;top:-3px;right:1px;font:7px Georgia,serif;letter-spacing:.14em;text-transform:uppercase;color:#8a7a5a}
+.pwr:focus-visible .key{outline:2px solid var(--g);outline-offset:2px}
 .tc{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;margin-top:12px}
 .tc button{display:flex;align-items:center;justify-content:center;color:#5a4630;transition:transform .12s,color .15s}
 .tc #bk{justify-self:start}.tc #nx{justify-self:end}
@@ -184,7 +185,7 @@ h2{font:400 24px Georgia,serif;margin:0 0 6px}
 <section id="experience"><h2>Experience</h2>
 <p class="lead">Campus work, open source, and student leadership. Choose a record to play it.</p>
 <div class="player">
-<div class="deck"><div class="disc" id="disc"><i></i></div><div class="arm" id="arm"></div><div class="lid" id="lid"></div><button class="pwr" id="pwr" aria-label="Turn the record player on or off" aria-pressed="false"><span class="kn"><i></i></span><span class="lb l0">Off</span><span class="lb l1">On</span></button></div>
+<div class="deck"><div class="disc" id="disc"><i></i></div><div class="arm" id="arm"></div><div class="lid" id="lid"></div><button class="pwr" id="pwr" aria-label="Turn the record player on or off" aria-pressed="false"><span class="lb">Power</span><span class="key"></span></button></div>
 <div class="panel" id="ep"><div class="np">Ready to play</div><span class="idle">Choose a record below.</span></div>
 </div>
 <div class="rshelf"><div class="sleeves" id="sleeves"></div><div class="ledge"></div></div></section>
@@ -216,7 +217,7 @@ var P=[
 ["Looped","Gmail job-application tracker","Reads your Gmail, classifies application emails with ML, and shows a dashboard with Sankey charts. Exports to Google Sheets.","Python · scikit-learn · D3.js",150,"#7a2e2e","looped","https://looped-frontend.onrender.com/"],
 ["ShellWeEat","UMD free-food finder","Shows free food at UMD events and clubs, who can go, and RSVP links. Built on the TerpLink iCal feed.","Python · Flask · SQLite · HTML/CSS",178,"#b8893a","shell-we-eat","https://shellweeat.vercel.app/"],
 ["Terraprep","UMD study-partner network","Networking and study-partner app for UMD students. Launched and in its early stage.","Web app",138,"#2f4a63","terraprep","https://terraprep.vercel.app/"],
-["Flight Tracker","Flight tracking","Describe what it shows and which data source it uses.","Add stack",166,"#3e5a47"],
+["Flight Tracker","Live nearby-flight display","A Python script polls the adsb.lol API every 30 seconds for planes within 10 nautical miles of College Park, picks the closest airborne one, and looks up its airline and route. A web page shows callsign, route, aircraft, altitude, and distance, and clears itself when data goes stale.","Python · JavaScript · HTML/CSS · adsb.lol API",166,"#3e5a47"],
 ["Unix Shell","Command-line shell","Unix shell in C that launches and tracks foreground and background processes using fork, execvp, and waitpid, allowing users to execute commands while monitoring job completion.","C, POSIX System Calls, Linux",146,"#a4552e"],
 ["Automata","Automata project","Regular-expression-to-NFA conversion, epsilon closure, NFA acceptance, and subset construction.","OCaml, Dune, Alcotest",158,"#5e3a55"],
 ["Movie Reviews","Movie review analysis","Built unigram and bigram feature extractors plus perceptron and logistic-regression classifiers to predict positive or negative sentiment from labeled movie-review text.","Python, NumPy",172,"#3f6b6b"],
@@ -235,14 +236,19 @@ var E=[
 ["Data Science Track Lead","Data Science Club, UMD","Feb 2026 – May 2026",["Co-led hands-on workshops teaching data cleaning, analysis, and visualization with real-world datasets.","Designed Python and Google Colab exercises on pandas and visualization, and helped students debug errors live."]],
 ["Administrative Assistant","Dean’s Office, Montgomery College","Aug 2023 – Dec 2024",["Managed front-office inquiries and appointments for students, faculty, and visitors, routing requests to the right teams.","Completed time-sensitive Dean’s Office work and designed flyers that raised awareness of campus programs."]]];
 function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e}
+function dv(t){var d=el('div','dv');d.appendChild(el('span','dvt',t));d.setAttribute('role','separator');d.setAttribute('aria-label',t);return d}
 var cs=document.getElementById('case'),vb=document.getElementById('vb'),books=[];
-[P.slice(0,7),P.slice(7)].forEach(function(grp){var r=el('div','rw');grp.forEach(function(p){
-var b=el('button','book',p[0]);b.style.height=p[4]+'px';b.style.backgroundColor=p[5];b.setAttribute('aria-label','Open '+p[0]);books.push(b);
+var L={"Looped":"Python","ShellWeEat":"Python","Flight Tracker":"Python","Movie Reviews":"Python","Census":"Python","Attendance + Weather":"Python","PlanetTerp":"Python","Java Data Structures":"Java","Java OOP Foundations":"Java","Unix Shell":"C","Automata":"OCaml","Scholarly XML":"TypeScript","Terraprep":"Web","Creo CAD Exercises":"CAD"};
+var LC={Python:"#2f5f9e",Java:"#9b2c2c",C:"#d4a82a",OCaml:"#d9822b",TypeScript:"#4a5560",Web:"#6f7240",CAD:"#2c4a4a"};
+var PM={};P.forEach(function(p){PM[p[0]]=p;p[5]=LC[L[p[0]]]});
+var ROWS=[[["Must reads",["Looped","ShellWeEat"]],["Python",["Flight Tracker","Movie Reviews","Census","Attendance + Weather","PlanetTerp"]],["Java",["Java Data Structures","Java OOP Foundations"]]],[["C",["Unix Shell"]],["OCaml",["Automata"]],["TypeScript",["Scholarly XML"]],["Web",["Terraprep"]],["CAD",["Creo CAD Exercises"]]]];
+ROWS.forEach(function(row){var r=el('div','rw'),pl=0,pn=0;row.forEach(function(sec){var d=dv(sec[0]);if(pl)d.style.marginLeft=Math.max(28,Math.round(pl*9.2+18-35*pn))+'px';r.appendChild(d);pl=sec[0].length;pn=sec[1].length;sec[1].forEach(function(nm){var p=PM[nm];
+var b=el('button','book',p[0]);b.style.height=p[4]+'px';b.style.backgroundColor=p[5];if(p[5]==='#d4a82a')b.style.color='#2b2411';b.setAttribute('aria-label','Open '+p[0]);books.push(b);
 b.onclick=function(){var was=b.classList.contains('on');books.forEach(function(x){x.classList.remove('on')});if(was){var kk=document.getElementById('bk');if(kk){kk.classList.remove('open');setTimeout(function(){if(!books.some(function(x){return x.classList.contains('on')}))vb.innerHTML='<span class="idle">Choose a book.</span>'},1000)}return}b.classList.add('on');
 var link=(p[7]?'<a href="'+p[7]+'">Live site ↗</a> &nbsp; ':'')+(p[6]?'<a href="'+G+p[6]+'">GitHub ↗</a>':'');if(!link)link='<a href="https://github.com/mdanyal4">GitHub profile ↗</a>';
-vb.innerHTML='<div class="bk" id="bk" style="--bc:'+p[5]+'"><div class="lp"></div><div class="rp"><p>'+p[2]+'</p>'+link+'</div><div class="cover"><div class="fr" style="background:'+p[5]+'">'+p[0]+'</div><div class="bc"><h3>'+p[0]+'</h3><p class="s">'+p[1]+'</p><div class="tg">'+p[3]+'</div></div></div></div>';
+vb.innerHTML='<div class="bk" id="bk" style="--bc:'+p[5]+'"><div class="lp"></div><div class="rp"><p>'+p[2]+'</p>'+link+'</div><div class="cover"><div class="fr" style="background:'+p[5]+(p[5]==='#d4a82a'?';color:#2b2411':'')+'">'+p[0]+'</div><div class="bc"><h3>'+p[0]+'</h3><p class="s">'+p[1]+'</p><div class="tg">'+p[3]+'</div></div></div></div>';
 var k=document.getElementById('bk');requestAnimationFrame(function(){requestAnimationFrame(function(){k.classList.add('open')})})};
-r.appendChild(b)});cs.appendChild(r)});
+r.appendChild(b)})});cs.appendChild(r)});
 var sl=document.getElementById('sleeves'),ep=document.getElementById('ep'),disc=document.getElementById('disc'),arm=document.getElementById('arm');
 var col=['#2f4a63','#7a2e2e','#a4552e','#5e3a55','#3f6b6b','#b8893a'];
 var lid=document.getElementById('lid'),lab=disc.querySelector('i'),pwr=document.getElementById('pwr'),DUR=10,cur=-1,t=0,timer=null,paused=false,btns=[];
