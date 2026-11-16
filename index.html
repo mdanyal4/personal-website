@@ -2,7 +2,6 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Danyal Mohammad</title>
-<script>try{var _n=localStorage.getItem("night");if(_n==="1"||(_n===null&&window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("night")}catch(e){}</script>
 <style>
 :root{--bg:#f4f1ea;--fg:#241f1a;--mut:#6f695e;--line:#e2dccd;--card:#fffdf8;--paper:#fbf7ec;--g:#8a3b2e;--g2:#f1ece0;--wood:#7a5a3c;--wood2:#5c4229;--back:#4a3622;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 *{box-sizing:border-box}
@@ -320,7 +319,7 @@ env.onkeydown=function(e){if(e.target===env&&(e.key=='Enter'||e.key==' ')){e.pre
 (function(){var b=document.getElementById('lamp');if(!b)return;var r=document.documentElement,w=b.parentNode;
 b.setAttribute('aria-pressed',r.classList.contains('night'));
 function tick(){try{var A=window.AudioContext||window.webkitAudioContext,c=new A(),o=c.createOscillator(),g=c.createGain();o.type='square';o.frequency.value=1700;g.gain.setValueAtTime(.06,c.currentTime);g.gain.exponentialRampToValueAtTime(.0001,c.currentTime+.05);o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+.06);setTimeout(function(){c.close()},300)}catch(e){}}
-b.addEventListener('click',function(){var n=!r.classList.contains('night');r.classList.toggle('night',n);b.setAttribute('aria-pressed',n);w.classList.add('used');tick();try{localStorage.setItem('night',n?'1':'0')}catch(e){}});
+b.addEventListener('click',function(){var n=!r.classList.contains('night');r.classList.toggle('night',n);b.setAttribute('aria-pressed',n);w.classList.add('used');tick();});
 })();
 </script>
 </body></html>
