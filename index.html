@@ -2,6 +2,7 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Danyal Mohammad</title>
+<script>try{var _n=localStorage.getItem("night");if(_n==="1"||(_n===null&&window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("night")}catch(e){}</script>
 <style>
 :root{--bg:#f4f1ea;--fg:#241f1a;--mut:#6f695e;--line:#e2dccd;--card:#fffdf8;--paper:#fbf7ec;--g:#8a3b2e;--g2:#f1ece0;--wood:#7a5a3c;--wood2:#5c4229;--back:#4a3622;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 *{box-sizing:border-box}
@@ -172,6 +173,41 @@ h2{font:400 24px Georgia,serif;margin:0 0 6px}
 @media(max-width:620px){.desk{grid-template-columns:1fr}.post{grid-template-columns:1fr}.post .msg{border-right:0;padding-right:0}}
 @media(max-width:620px){.hero h1{font-size:32px}.about{grid-template-columns:1fr}.player{grid-template-columns:1fr}.deck{margin:0 auto}.rp,.bc{padding:14px;font-size:13px}.fr{font-size:17px;padding:12px}.bk h3{font-size:17px}}
 @media(prefers-reduced-motion:reduce){.cover{transition:none}}
+
+/* night reading mode */
+html{overflow-x:clip}
+html.night{color-scheme:dark;--bg:#16110d;--fg:#eadfc9;--mut:#a89c84;--line:#352b21;--card:#211a14;--paper:#2a2118;--g:#e0955a;--g2:#2a2118}
+body,header,.panel,.deck,.rp,.bc{transition:background-color .5s,color .5s,border-color .5s}
+html.night .frame,html.night .post{--fg:#241f1a;--mut:#6f695e;color:#241f1a}
+html.night .hint{color:#c9b58c}
+html.night .tc #bk,html.night .tc #nx{color:#d8c7a3}
+html.night .pwr .lb{color:#b5a47e}
+/* reading lamp */
+.lampwrap{position:relative;display:flex;justify-content:flex-end;align-items:flex-end;gap:4px;height:150px;padding-right:36px;margin-bottom:-1px;pointer-events:none}
+.lamp{pointer-events:auto;line-height:0;cursor:pointer;position:relative}
+.lamp svg{display:block;overflow:visible}
+.lamp:focus-visible{outline:2px solid var(--g);outline-offset:4px;border-radius:4px}
+.lamp .on-only{opacity:0;transition:opacity .45s}
+html.night .lamp .on-only{opacity:1}
+.lamp .chain{transition:transform .15s}
+.lamp:active .chain{transform:translateY(5px)}
+.lnote{align-self:center;font:15px/1.2 "Bradley Hand","Segoe Print","Noteworthy",cursive;color:var(--mut);transform:rotate(-5deg);pointer-events:none;transition:opacity .4s}
+.lnote:after{content:" \2192"}
+.lampwrap.used .lnote{opacity:0}
+.halo{position:absolute;right:-199px;top:-225px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(255,176,80,.2),rgba(255,150,60,.07) 45%,transparent 70%);opacity:0;pointer-events:none;transition:opacity .6s}
+html.night .halo{opacity:1}
+/* lived-in shelf */
+.book{position:relative}
+.stack{flex:none;align-self:flex-end;margin-left:auto;margin-right:12px;display:flex;flex-direction:column;pointer-events:none}
+.fb{position:relative;height:34px;font:15px/34px Georgia,serif;color:#f4eedd;text-align:center;border-radius:2px;box-shadow:inset 0 2px rgba(255,255,255,.12),inset 0 -2px rgba(0,0,0,.25),0 1px 2px rgba(0,0,0,.35)}
+.fb:before,.fb:after{content:"";position:absolute;top:0;bottom:0;width:4px;border-left:1.5px solid #d9b866;border-right:1.5px solid #d9b866}
+.fb:before{left:13px}.fb:after{right:13px}
+.plant{flex:none;align-self:flex-end;margin-left:auto;margin-right:6px;line-height:0;pointer-events:none}
+.plant svg{display:block;width:62px;height:auto}
+/* polaroid notes, tape, stickers */
+.cap2{font:12.5px/1.2 "Bradley Hand","Segoe Print","Noteworthy",cursive;color:#8a6a45;text-align:center;margin-top:2px}
+.pol.tp:after{content:"";position:absolute;left:-14px;top:4px;width:40px;height:13px;background:rgba(236,214,140,.72);transform:rotate(-38deg);box-shadow:0 1px 1px rgba(0,0,0,.15)}
+.pol.sk:after{content:var(--st,"\2605");position:absolute;right:-8px;top:60px;width:22px;height:22px;border-radius:50%;background:var(--sc,#c9482f);color:#fbf7ec;font:13px/22px Georgia,serif;text-align:center;transform:rotate(14deg);box-shadow:0 1px 2px rgba(0,0,0,.3)}
 </style></head><body>
 <header><div><a href="#top" style="text-decoration:none;font-weight:600">Danyal Mohammad</a>
 <nav><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#about">About</a><a href="resume.pdf">Resume</a></nav></div></header>
@@ -193,12 +229,13 @@ h2{font:400 24px Georgia,serif;margin:0 0 6px}
 
 <section id="projects"><h2>Projects</h2>
 <p class="lead">Take a book off the shelf and open it.</p>
+<div class="lampwrap"><div class="halo"></div><span class="lnote">pull the chain</span><button class="lamp" id="lamp" type="button" aria-pressed="false" aria-label="Toggle reading lamp (night mode)"><svg viewBox="0 0 90 150" width="90" height="150" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd98a" stop-opacity=".5"/><stop offset="1" stop-color="#ffd98a" stop-opacity="0"/></linearGradient></defs><path class="on-only" d="M20 54 L70 54 L116 148 L-26 148 Z" fill="url(#lg)"/><ellipse cx="45" cy="143" rx="27" ry="6" fill="#8a6a2a"/><rect x="38" y="130" width="14" height="13" rx="3" fill="#b8893a"/><rect x="43" y="52" width="4" height="80" fill="#b8893a"/><path d="M33 18 Q45 10 57 18 L72 52 Q45 60 18 52 Z" fill="#2f5f4a"/><path d="M38 20 Q42 36 36 52 L30 52 Q36 36 38 20 Z" fill="#3d7a5f" opacity=".6"/><ellipse class="on-only" cx="45" cy="55" rx="25" ry="7" fill="#ffd98a" opacity=".9"/><circle class="on-only" cx="45" cy="54" r="5" fill="#fff3c4"/><g class="chain"><path d="M63 53 V84" stroke="#b8893a" stroke-width="1.5" fill="none"/><circle cx="63" cy="88" r="3.2" fill="#d9b866"/></g></svg></button></div>
 <div class="case" id="case"></div>
 <div class="vb" id="vb"><span class="idle">Choose a book.</span></div></section>
 
 <section id="about"><h2>About</h2>
 <p style="margin:0">I like the part of building where you work out what's actually getting in someone's way and make it simpler. I'm finishing my Computer Science degree with minors in Data Science and Human Development, while also building projects and contributing to tools people use.</p>
-<div class="wall"><div class="wl">Languages</div><div class="str"><div class="pol" style="--r:-3deg"><div class="ph" style="background:#9b2c2c">.java</div><div class="cap">Java</div></div><div class="pol" style="--r:2deg"><div class="ph" style="background:#2f5f9e">.py</div><div class="cap">Python</div></div><div class="pol" style="--r:-2deg"><div class="ph" style="background:#d4a82a;color:#2b2411">.c</div><div class="cap">C</div></div><div class="pol" style="--r:3deg"><div class="ph" style="background:#d9822b">.ml</div><div class="cap">OCaml</div></div><div class="pol" style="--r:-1deg"><div class="ph" style="background:#4a5560">.ts</div><div class="cap">TypeScript</div></div><div class="pol" style="--r:2deg"><div class="ph" style="background:#6f7240">.js</div><div class="cap">JavaScript</div></div><div class="pol" style="--r:-3deg"><div class="ph" style="background:#5b4030">&lt;/&gt;</div><div class="cap">HTML/CSS</div></div><div class="pol" style="--r:1deg"><div class="ph" style="background:#2c4a4a">.asm</div><div class="cap">x86 Assembly</div></div></div><div class="wl">Tools</div><div class="str"><div class="pol" style="--r:-3deg"><div class="ph" style="background:#5e3a55">git</div><div class="cap">Git</div></div><div class="pol" style="--r:2deg"><div class="ph" style="background:#3f6b6b">API</div><div class="cap">FastAPI</div></div><div class="pol" style="--r:-2deg"><div class="ph" style="background:#8c4a3a">ML</div><div class="cap">scikit-learn</div></div><div class="pol" style="--r:3deg"><div class="ph" style="background:#4a5560">df</div><div class="cap">pandas</div></div><div class="pol" style="--r:-1deg"><div class="ph" style="background:#6f7240">D3</div><div class="cap">D3.js</div></div><div class="pol" style="--r:2deg"><div class="ph" style="background:#2c4a4a">$_</div><div class="cap">Linux</div></div></div></div>
+<div class="wall"><div class="wl">Languages</div><div class="str"><div class="pol tp" style="--r:-3deg"><div class="ph" style="background:#9b2c2c">.java</div><div class="cap">Java</div><div class="cap2">so. many. getters.</div></div><div class="pol sk" style="--r:2deg"><div class="ph" style="background:#2f5f9e">.py</div><div class="cap">Python</div><div class="cap2">the duct tape</div></div><div class="pol" style="--r:-2deg"><div class="ph" style="background:#d4a82a;color:#2b2411">.c</div><div class="cap">C</div><div class="cap2">segfault? probably</div></div><div class="pol tp" style="--r:3deg"><div class="ph" style="background:#d9822b">.ml</div><div class="cap">OCaml</div><div class="cap2">all functions</div></div><div class="pol" style="--r:-1deg"><div class="ph" style="background:#4a5560">.ts</div><div class="cap">TypeScript</div><div class="cap2">JS + a seatbelt</div></div><div class="pol" style="--r:2deg"><div class="ph" style="background:#6f7240">.js</div><div class="cap">JavaScript</div><div class="cap2">[] + [] is ''</div></div><div class="pol sk" style="--st:'♥';--r:-3deg"><div class="ph" style="background:#5b4030">&lt;/&gt;</div><div class="cap">HTML/CSS</div><div class="cap2">centering a div</div></div><div class="pol" style="--r:1deg"><div class="ph" style="background:#2c4a4a">.asm</div><div class="cap">x86 Assembly</div><div class="cap2">mov, mov, mov</div></div></div><div class="wl">Tools</div><div class="str"><div class="pol tp" style="--r:-3deg"><div class="ph" style="background:#5e3a55">git</div><div class="cap">Git</div><div class="cap2">fix fix fix final</div></div><div class="pol" style="--r:2deg"><div class="ph" style="background:#3f6b6b">API</div><div class="cap">FastAPI</div><div class="cap2">docs for free</div></div><div class="pol" style="--r:-2deg"><div class="ph" style="background:#8c4a3a">ML</div><div class="cap">scikit-learn</div><div class="cap2">fit, predict, repeat</div></div><div class="pol" style="--r:3deg"><div class="ph" style="background:#4a5560">df</div><div class="cap">pandas</div><div class="cap2">df.head()</div></div><div class="pol tp" style="--r:-1deg"><div class="ph" style="background:#6f7240">D3</div><div class="cap">D3.js</div><div class="cap2">svg all the things</div></div><div class="pol sk" style="--st:'✓';--sc:#3f6b4a;--r:2deg"><div class="ph" style="background:#2c4a4a">$_</div><div class="cap">Linux</div><div class="cap2">sudo !!</div></div></div></div>
 <div class="desk">
 <div class="frame"><div class="in"><small>Education</small><h3>University of Maryland, College Park</h3><p>B.S. Computer Science</p><p>Minors in Data Science and Human Development</p><p style="margin-top:6px">Expected May 2027</p><div class="seal">UMD</div></div></div>
 <div class="envwrap">
@@ -243,13 +280,14 @@ var L={"Looped":"Python","ShellWeEat":"Python","Flight Tracker":"Python","Movie 
 var LC={Python:"#2f5f9e",Java:"#9b2c2c",C:"#d4a82a",OCaml:"#d9822b",TypeScript:"#4a5560",Web:"#6f7240",CAD:"#2c4a4a"};
 var PM={};P.forEach(function(p){PM[p[0]]=p;p[5]=LC[L[p[0]]]});
 var ROWS=[[["Must reads",["Looped","ShellWeEat"]],["Python",["Flight Tracker","Movie Reviews","Census","Attendance + Weather","PlanetTerp"]],["Java",["Java Data Structures","Java OOP Foundations"]]],[["C",["Unix Shell"]],["OCaml",["Automata"]],["TypeScript",["Scholarly XML"]],["Web",["Terraprep"]],["CAD",["Creo CAD Exercises"]]]];
+function decor(r,i){if(i===0){var st=el('div','stack','<div class="fb" style="width:152px;margin-left:14px;background:#8a3b2e">Field Notes</div><div class="fb" style="width:184px;background:#7b6a4a">Still Learning</div>');st.setAttribute('aria-hidden','true');r.appendChild(st)}if(i===1){var pl=el('div','plant','<svg viewBox="0 0 70 118" aria-hidden="true"><path d="M35 74 C28 52 14 46 8 30 C20 34 30 44 35 62 Z" fill="#5c7a3f"/><path d="M35 74 C42 50 58 44 64 26 C50 32 40 44 35 60 Z" fill="#6f8f4c"/><path d="M35 74 C33 52 30 34 36 14 C42 34 38 54 35 74 Z" fill="#4f6b3a"/><path d="M35 78 C22 66 10 68 4 58 C16 56 28 62 35 72 Z" fill="#6b8a4a"/><path d="M35 78 C48 64 60 66 66 56 C54 54 42 60 35 72 Z" fill="#587a40"/><path d="M16 82 H54 L49 118 H21 Z" fill="#b0643a"/><path d="M24 86 L26 116 H21 Z" fill="rgba(255,255,255,.14)"/><rect x="13" y="78" width="44" height="8" rx="2" fill="#c47a4a"/></svg>');r.appendChild(pl)}}
 ROWS.forEach(function(row){var r=el('div','rw'),pl=0,pn=0;row.forEach(function(sec){var d=dv(sec[0]);if(pl)d.style.marginLeft=Math.max(28,Math.round(pl*9.2+18-35*pn))+'px';r.appendChild(d);pl=sec[0].length;pn=sec[1].length;sec[1].forEach(function(nm){var p=PM[nm];
 var b=el('button','book',p[0]);b.style.height=p[4]+'px';b.style.backgroundColor=p[5];if(p[5]==='#d4a82a')b.style.color='#2b2411';b.setAttribute('aria-label','Open '+p[0]);books.push(b);
 b.onclick=function(){var was=b.classList.contains('on');books.forEach(function(x){x.classList.remove('on')});if(was){var kk=document.getElementById('bk');if(kk){kk.classList.remove('open');setTimeout(function(){if(!books.some(function(x){return x.classList.contains('on')}))vb.innerHTML='<span class="idle">Choose a book.</span>'},1000)}return}b.classList.add('on');
 var link=(p[7]?'<a href="'+p[7]+'">Live site ↗</a> &nbsp; ':'')+(p[6]?'<a href="'+G+p[6]+'">GitHub ↗</a>':'');if(!link)link='<a href="https://github.com/mdanyal4">GitHub profile ↗</a>';
 vb.innerHTML='<div class="bk" id="bk" style="--bc:'+p[5]+'"><div class="lp"></div><div class="rp"><p>'+p[2]+'</p>'+link+'</div><div class="cover"><div class="fr" style="background:'+p[5]+(p[5]==='#d4a82a'?';color:#2b2411':'')+'">'+p[0]+'</div><div class="bc"><h3>'+p[0]+'</h3><p class="s">'+p[1]+'</p><div class="tg">'+p[3]+'</div></div></div></div>';
 var k=document.getElementById('bk');requestAnimationFrame(function(){requestAnimationFrame(function(){k.classList.add('open')})})};
-r.appendChild(b)})});cs.appendChild(r)});
+r.appendChild(b)})});decor(r,ROWS.indexOf(row));cs.appendChild(r)});
 var sl=document.getElementById('sleeves'),ep=document.getElementById('ep'),disc=document.getElementById('disc'),arm=document.getElementById('arm');
 var col=['#2f4a63','#7a2e2e','#a4552e','#5e3a55','#3f6b6b','#b8893a'];
 var lid=document.getElementById('lid'),lab=disc.querySelector('i'),pwr=document.getElementById('pwr'),DUR=10,cur=-1,t=0,timer=null,paused=false,btns=[];
@@ -276,6 +314,13 @@ idle();
 function tog(){var o=env.classList.toggle('open');ltr.tabIndex=o?0:-1;dl.classList.toggle('on',o)}
 env.onclick=function(e){if(e.target.closest('a')&&env.classList.contains('open'))return;tog()};
 env.onkeydown=function(e){if(e.target===env&&(e.key=='Enter'||e.key==' ')){e.preventDefault();tog()}};
+})();
+</script>
+<script>
+(function(){var b=document.getElementById('lamp');if(!b)return;var r=document.documentElement,w=b.parentNode;
+b.setAttribute('aria-pressed',r.classList.contains('night'));
+function tick(){try{var A=window.AudioContext||window.webkitAudioContext,c=new A(),o=c.createOscillator(),g=c.createGain();o.type='square';o.frequency.value=1700;g.gain.setValueAtTime(.06,c.currentTime);g.gain.exponentialRampToValueAtTime(.0001,c.currentTime+.05);o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+.06);setTimeout(function(){c.close()},300)}catch(e){}}
+b.addEventListener('click',function(){var n=!r.classList.contains('night');r.classList.toggle('night',n);b.setAttribute('aria-pressed',n);w.classList.add('used');tick();try{localStorage.setItem('night',n?'1':'0')}catch(e){}});
 })();
 </script>
 </body></html>
