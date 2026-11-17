@@ -189,10 +189,10 @@ html.night .pwr .lb{color:#b5a47e}
 .lamp .on-only{opacity:0;transition:opacity .45s}
 html.night .lamp .on-only{opacity:1}
 .lamp .chain{transition:transform .15s}
-.lamp:active .chain{transform:translateY(5px)}
-.lnote{align-self:center;font:15px/1.2 "Bradley Hand","Segoe Print","Noteworthy",cursive;color:var(--mut);transform:rotate(-5deg);pointer-events:none;transition:opacity .4s}
-.lnote:after{content:" \2192"}
-.lampwrap.used .lnote{opacity:0}
+.lamp .chain{transform-origin:63px 53px}
+.lamp:hover .chain,.lamp:focus-visible .chain{animation:sway 1.8s ease-in-out}
+.lamp:active .chain{animation:none;transform:translateY(5px)}
+@keyframes sway{0%{transform:rotate(0)}14%{transform:rotate(-6deg)}36%{transform:rotate(4.5deg)}56%{transform:rotate(-3deg)}74%{transform:rotate(1.8deg)}88%{transform:rotate(-.8deg)}100%{transform:rotate(0)}}
 .halo{position:absolute;right:-199px;top:-225px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(255,176,80,.2),rgba(255,150,60,.07) 45%,transparent 70%);opacity:0;pointer-events:none;transition:opacity .6s}
 html.night .halo{opacity:1}
 /* lived-in shelf */
@@ -228,7 +228,7 @@ html.night .halo{opacity:1}
 
 <section id="projects"><h2>Projects</h2>
 <p class="lead">Take a book off the shelf and open it.</p>
-<div class="lampwrap"><div class="halo"></div><span class="lnote">pull the chain</span><button class="lamp" id="lamp" type="button" aria-pressed="false" aria-label="Toggle reading lamp (night mode)"><svg viewBox="0 0 90 150" width="90" height="150" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd98a" stop-opacity=".5"/><stop offset="1" stop-color="#ffd98a" stop-opacity="0"/></linearGradient></defs><path class="on-only" d="M20 54 L70 54 L116 148 L-26 148 Z" fill="url(#lg)"/><ellipse cx="45" cy="143" rx="27" ry="6" fill="#8a6a2a"/><rect x="38" y="130" width="14" height="13" rx="3" fill="#b8893a"/><rect x="43" y="52" width="4" height="80" fill="#b8893a"/><path d="M33 18 Q45 10 57 18 L72 52 Q45 60 18 52 Z" fill="#2f5f4a"/><path d="M38 20 Q42 36 36 52 L30 52 Q36 36 38 20 Z" fill="#3d7a5f" opacity=".6"/><ellipse class="on-only" cx="45" cy="55" rx="25" ry="7" fill="#ffd98a" opacity=".9"/><circle class="on-only" cx="45" cy="54" r="5" fill="#fff3c4"/><g class="chain"><path d="M63 53 V84" stroke="#b8893a" stroke-width="1.5" fill="none"/><circle cx="63" cy="88" r="3.2" fill="#d9b866"/></g></svg></button></div>
+<div class="lampwrap"><div class="halo"></div><button class="lamp" id="lamp" type="button" aria-pressed="false" aria-label="Toggle reading lamp (night mode)"><svg viewBox="0 0 90 150" width="90" height="150" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd98a" stop-opacity=".5"/><stop offset="1" stop-color="#ffd98a" stop-opacity="0"/></linearGradient></defs><path class="on-only" d="M20 54 L70 54 L116 148 L-26 148 Z" fill="url(#lg)"/><ellipse cx="45" cy="143" rx="27" ry="6" fill="#8a6a2a"/><rect x="38" y="130" width="14" height="13" rx="3" fill="#b8893a"/><rect x="43" y="52" width="4" height="80" fill="#b8893a"/><path d="M33 18 Q45 10 57 18 L72 52 Q45 60 18 52 Z" fill="#2f5f4a"/><path d="M38 20 Q42 36 36 52 L30 52 Q36 36 38 20 Z" fill="#3d7a5f" opacity=".6"/><ellipse class="on-only" cx="45" cy="55" rx="25" ry="7" fill="#ffd98a" opacity=".9"/><circle class="on-only" cx="45" cy="54" r="5" fill="#fff3c4"/><g class="chain"><path d="M63 53 V84" stroke="#b8893a" stroke-width="1.5" fill="none"/><circle cx="63" cy="88" r="3.2" fill="#d9b866"/></g></svg></button></div>
 <div class="case" id="case"></div>
 <div class="vb" id="vb"><span class="idle">Choose a book.</span></div></section>
 
